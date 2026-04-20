@@ -1,0 +1,48 @@
+<% primary_label = content(:donate_primary_label).presence || "Donate one-time" %>
+<% primary_url = safe_url(content(:donate_primary_url)) %>
+<% secondary_label = content(:donate_secondary_label).presence || "Donate monthly" %>
+<% secondary_url = safe_url(content(:donate_secondary_url), default: primary_url) %>
+
+<main class="page page--donate">
+  <section class="donate-hero">
+    <h1 data-animate="word-stagger"><%= content(:page_title).presence || current_page.title %></h1>
+    <% intro = content(:page_intro).presence || "Your support sustains independent reporting, rapid updates, and on-the-ground mobilization." %>
+    <p data-animate="fade-up" data-animate-delay="0.12"><%= intro %></p>
+
+    <div class="donate-hero__actions" data-animate-group="stagger" data-animate-delay="0.18">
+      <%= link_to primary_label, primary_url, class: "button button--donate button--large donate-hero__button", target: (primary_url.start_with?("http") ? "_blank" : nil), rel: (primary_url.start_with?("http") ? "noopener" : nil) %>
+      <%= link_to secondary_label, secondary_url, class: "button button--secondary button--large donate-hero__button", target: (secondary_url.start_with?("http") ? "_blank" : nil), rel: (secondary_url.start_with?("http") ? "noopener" : nil) %>
+    </div>
+  </section>
+
+  <section class="donate-impact">
+    <h2 data-animate="fade-up">Impact</h2>
+    <ul class="donate-impact__list" data-animate-group="stagger" data-animate-delay="0.08">
+      <% points = [] %>
+      <% repeater :impact_points do |point| %>
+        <% text = point.content.text(:point_text).presence %>
+        <% points << text if text.present? %>
+      <% end %>
+
+      <% if points.present? %>
+        <% points.each do |text| %>
+          <li><%= text %></li>
+        <% end %>
+      <% else %>
+        <li>Support rapid-response reporting and editorial operations.</li>
+        <li>Fund campaign communication, event coverage, and publishing infrastructure.</li>
+        <li>Keep core content free and accessible to the wider public.</li>
+      <% end %>
+    </ul>
+
+    <div class="donate-impact__cta" data-animate="fade-up" data-animate-delay="0.12">
+      <%= link_to primary_label, primary_url, class: "button button--donate button--large donate-impact__button", target: (primary_url.start_with?("http") ? "_blank" : nil), rel: (primary_url.start_with?("http") ? "noopener" : nil) %>
+    </div>
+  </section>
+
+  <% if content(:body).present? %>
+    <section class="donate-body">
+      <%= content.html(:body) %>
+    </section>
+  <% end %>
+</main>

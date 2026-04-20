@@ -1,0 +1,28 @@
+<article class="story-card <%= "story-card--compact" if compact %>">
+  <% image_url = helpers.page_image_url(page, part_name: :hero_image, resize_to_fill: [960, 560], fallback: "events/upcoming-default.jpg") %>
+  <% unless compact %>
+    <a href="<%= helpers.cms_page_path(page) %>" class="story-card__media-link" aria-label="<%= page.title %>">
+      <%= image_tag image_url, alt: page.title, class: "story-card__media", loading: "lazy", decoding: "async" %>
+    </a>
+  <% end %>
+
+  <div class="story-card__content">
+    <% kicker = helpers.article_badge_label(page, fallback: "News") %>
+    <% if kicker.present? %>
+      <p class="story-card__kicker"><%= kicker %></p>
+    <% end %>
+
+    <h3 class="story-card__title">
+      <%= link_to page.title, helpers.cms_page_path(page), class: "story-card__title-link" %>
+    </h3>
+
+    <% summary = helpers.article_summary(page) %>
+    <% if summary.present? %>
+      <p class="story-card__summary"><%= truncate(summary, length: 140) %></p>
+    <% end %>
+
+    <p class="story-card__meta">
+      <time datetime="<%= helpers.article_publish_datetime(page)&.iso8601 %>"><%= helpers.article_publish_label(page) %></time>
+    </p>
+  </div>
+</article>

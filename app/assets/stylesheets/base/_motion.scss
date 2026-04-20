@@ -1,0 +1,124 @@
+:root {
+  --si-header-offset: 120px;
+}
+
+.motion-word {
+  display: inline-block;
+  will-change: opacity, transform;
+}
+
+[data-animate="clip-reveal"],
+[data-parallax] {
+  overflow: clip;
+}
+
+[data-animate="clip-reveal"] img,
+[data-parallax] img {
+  will-change: transform;
+}
+
+[data-parallax] img,
+[data-parallax] video,
+[data-parallax] iframe {
+  transform: translate3d(0, var(--si-parallax-offset, 0px), 0) scale(1.06);
+}
+
+.site-motion-progress,
+.site-reading-progress {
+  left: 0;
+  pointer-events: none;
+  position: fixed;
+  right: 0;
+  z-index: 70;
+}
+
+.site-motion-progress {
+  height: 3px;
+  opacity: 0;
+  top: 0;
+  transition: opacity var(--si-motion-fast) ease;
+}
+
+.site-motion-progress.is-active {
+  opacity: 1;
+}
+
+.site-motion-progress__bar,
+.site-reading-progress__bar {
+  background: linear-gradient(90deg, var(--si-red-bright), var(--si-red));
+  display: block;
+  height: 100%;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform var(--si-motion-base) var(--si-ease-standard);
+  width: 100%;
+}
+
+.site-reading-progress {
+  box-shadow: 0 1px 0 rgba(27, 28, 28, 0.06);
+  height: 3px;
+  top: var(--si-header-offset);
+  transition: top var(--si-motion-base) var(--si-ease-soft);
+  z-index: 39;
+}
+
+.site-reading-progress__bar {
+  background: var(--si-red);
+}
+
+.article-share__status {
+  opacity: 0;
+  transform: translateY(6px);
+  transition:
+    opacity var(--si-motion-fast) var(--si-ease-soft),
+    transform var(--si-motion-fast) var(--si-ease-soft);
+}
+
+.article-share__status.is-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.about-principle__body {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition:
+    max-height var(--si-motion-slow) var(--si-ease-soft),
+    opacity var(--si-motion-base) var(--si-ease-soft);
+}
+
+.about-principle[open] .about-principle__body {
+  max-height: 16rem;
+  opacity: 1;
+}
+
+.about-principle__toggle {
+  transition: transform var(--si-motion-base) var(--si-ease-standard);
+}
+
+.about-principle[open] .about-principle__toggle {
+  transform: rotate(45deg);
+}
+
+@media (max-width: 760px) {
+  :root {
+    --si-header-offset: 92px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-parallax] img,
+  [data-parallax] video,
+  [data-parallax] iframe {
+    transform: none !important;
+  }
+
+  .site-motion-progress__bar,
+  .site-reading-progress__bar,
+  .article-share__status,
+  .about-principle__body,
+  .about-principle__toggle {
+    transition: none !important;
+  }
+}

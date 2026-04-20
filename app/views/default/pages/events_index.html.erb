@@ -1,0 +1,38 @@
+<% upcoming = events_query.upcoming %>
+<% previous_events = events_query.past %>
+
+<main class="page page--events-catalogue collection-catalogue">
+  <section class="collection-catalogue__section" id="upcoming-events">
+    <header class="collection-catalogue__heading" data-animate="fade-up">
+      <h2>Upcoming Events</h2>
+      <span aria-hidden="true"></span>
+    </header>
+
+    <% if upcoming.present? %>
+      <div class="collection-catalogue__grid" data-animate-group="stagger" data-animate-delay="0.08">
+        <% upcoming.each do |event| %>
+          <%= render EventCardComponent.new(page: event) %>
+        <% end %>
+      </div>
+    <% else %>
+      <p class="empty-state">No upcoming events available.</p>
+    <% end %>
+  </section>
+
+  <section class="collection-catalogue__section" id="completed-events">
+    <header class="collection-catalogue__heading" data-animate="fade-up">
+      <h2>Completed Events</h2>
+      <span aria-hidden="true"></span>
+    </header>
+
+    <% if previous_events.present? %>
+      <div class="collection-catalogue__grid" data-animate-group="stagger" data-animate-delay="0.08">
+        <% previous_events.each do |event| %>
+          <%= render EventCardComponent.new(page: event, past: true) %>
+        <% end %>
+      </div>
+    <% else %>
+      <p class="empty-state">No completed events yet.</p>
+    <% end %>
+  </section>
+</main>

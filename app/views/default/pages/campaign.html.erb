@@ -1,0 +1,101 @@
+<% campaign_status = campaign_status_label(current_page, fallback: "Active") %>
+<% deadline_label = campaign_deadline_label(current_page).presence %>
+<% cta_label = content(:campaign_cta_label).presence %>
+<% cta_url = safe_url(content(:campaign_cta_url), default: cms_page_path(current_page)) %>
+<% cta_external = cta_url.start_with?("http") %>
+<% show_campaign_cta = cta_label.present? && cta_url != "#" %>
+<% hero = page_image_url(current_page, part_name: :hero_image, resize_to_fill: [1400, 760], fallback: "events/past-spotlight.png") %>
+
+<main class="page page--campaign">
+  <article class="event-template event-template--campaign" data-mobile-sticky-context>
+    <header class="event-template__header">
+      <p class="event-template__eyebrow" data-animate="fade-up"><%= campaign_status %></p>
+      <h1 data-animate="word-stagger" data-animate-delay="0.08"><%= current_page.title %></h1>
+
+      <% if content(:summary).present? %>
+        <p class="event-template__summary" data-animate="fade-up" data-animate-delay="0.16"><%= content(:summary) %></p>
+      <% end %>
+
+      <ul class="event-template__meta" data-animate="fade-up" data-animate-delay="0.24">
+        <li><span>Status</span><strong><%= campaign_status %></strong></li>
+        <% if deadline_label.present? %>
+          <li><span>Deadline</span><strong><%= deadline_label %></strong></li>
+        <% end %>
+        <% if cta_label.present? %>
+          <li><span>Action</span><strong><%= cta_label %></strong></li>
+        <% end %>
+      </ul>
+    </header>
+
+    <figure class="event-template__hero" data-mobile-sticky-target data-animate="clip-reveal" data-parallax="soft">
+      <%= image_tag hero, alt: current_page.title, decoding: "async" %>
+    </figure>
+
+    <div class="event-template__content-grid">
+      <aside class="event-template__aside" data-animate-group="stagger">
+        <h3>Key information</h3>
+        <dl>
+          <div>
+            <dt>Status</dt>
+            <dd><%= campaign_status %></dd>
+          </div>
+          <% if deadline_label.present? %>
+            <div>
+              <dt>Deadline</dt>
+              <dd><%= deadline_label %></dd>
+            </div>
+          <% end %>
+          <% if cta_label.present? %>
+            <div>
+              <dt>Next step</dt>
+              <dd><%= cta_label %></dd>
+            </div>
+          <% end %>
+        </dl>
+
+        <% if show_campaign_cta %>
+          <%= link_to cta_label, cta_url, class: "event-template__cta", target: (cta_external ? "_blank" : nil), rel: (cta_external ? "noopener" : nil) %>
+        <% end %>
+        <p class="event-template__aside-note">Support this action and share it widely.</p>
+      </aside>
+
+      <section class="event-template__about">
+        <header>
+          <h2>About the campaign</h2>
+        </header>
+        <div class="event-template__body">
+          <% if content(:body).present? %>
+            <%= content.html :body %>
+          <% else %>
+            <p>Campaign details will be published soon.</p>
+          <% end %>
+        </div>
+      </section>
+    </div>
+
+    <% if show_campaign_cta %>
+      <div class="event-template__sticky-cta" data-mobile-sticky-cta hidden>
+        <div class="event-template__sticky-copy">
+          <span class="event-template__sticky-label">Campaign action</span>
+          <strong><%= cta_label %></strong>
+        </div>
+        <%= link_to cta_label, cta_url, class: "event-template__sticky-button", target: (cta_external ? "_blank" : nil), rel: (cta_external ? "noopener" : nil) %>
+      </div>
+    <% end %>
+  </article>
+
+  <% related = campaigns_query.related_for(current_page, limit: 3) %>
+  <% if related.present? %>
+    <section class="campaigns-grid-section">
+      <header class="events-catalogue__heading" data-animate="fade-up">
+        <h2>Other active campaigns</h2>
+        <span aria-hidden="true"></span>
+      </header>
+      <div class="campaigns-grid" data-animate-group="stagger" data-animate-delay="0.08">
+        <% related.each do |campaign| %>
+          <%= render CampaignCardComponent.new(page: campaign) %>
+        <% end %>
+      </div>
+    </section>
+  <% end %>
+</main>

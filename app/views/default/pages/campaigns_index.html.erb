@@ -1,0 +1,41 @@
+<% active_campaigns = campaigns_query.active %>
+<% past_campaigns = campaigns_query.past %>
+
+<main class="page page--campaigns-index collection-catalogue">
+  <section class="collection-catalogue__section" id="active-campaigns">
+    <header class="collection-catalogue__heading" data-animate="fade-up">
+      <h2>Active Campaigns</h2>
+      <span aria-hidden="true"></span>
+    </header>
+
+    <% if active_campaigns.present? %>
+      <div class="collection-catalogue__grid" data-animate-group="stagger" data-animate-delay="0.08">
+        <% active_campaigns.each do |campaign| %>
+          <%= render CampaignCardComponent.new(page: campaign, show_top_meta: false, show_supporting: false) %>
+        <% end %>
+      </div>
+    <% else %>
+      <p class="empty-state">No active campaigns available.</p>
+    <% end %>
+  </section>
+
+  <section class="collection-catalogue__section" id="completed-campaigns">
+    <header class="collection-catalogue__heading" data-animate="fade-up">
+      <h2>Completed Campaigns</h2>
+      <span aria-hidden="true"></span>
+    </header>
+
+    <% if past_campaigns.present? %>
+      <details class="collection-catalogue__collapse" data-mobile-collapse open>
+        <summary class="collection-catalogue__collapse-summary">Show completed campaigns</summary>
+        <div class="collection-catalogue__grid" data-animate-group="stagger" data-animate-delay="0.08">
+          <% past_campaigns.each do |campaign| %>
+            <%= render CampaignCardComponent.new(page: campaign, past: true, show_top_meta: false, show_supporting: false) %>
+          <% end %>
+        </div>
+      </details>
+    <% else %>
+      <p class="empty-state">No completed campaigns yet.</p>
+    <% end %>
+  </section>
+</main>

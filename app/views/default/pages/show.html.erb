@@ -1,0 +1,11 @@
+<main class="page page--default">
+  <article class="generic-page">
+    <header class="generic-page__header">
+      <h1><%= content(:hero_title).presence || current_page.title %></h1>
+    </header>
+
+    <div class="generic-page__body">
+      <%= content.html :body %>
+    </div>
+  </article>
+</main>

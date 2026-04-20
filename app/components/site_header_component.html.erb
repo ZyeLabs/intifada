@@ -1,0 +1,72 @@
+<header class="site-header" data-mobile-nav>
+  <div class="site-header__main">
+    <a href="/" class="site-header__brand" aria-label="<%= helpers.site_name_text %>">
+      <%= image_tag helpers.header_brand_logo_url, alt: helpers.site_name_text, class: "site-header__brand-image" %>
+    </a>
+
+    <button
+      type="button"
+      class="site-header__menu-toggle"
+      aria-expanded="false"
+      aria-controls="site-mobile-nav"
+      data-mobile-nav-toggle>
+      <span class="site-header__menu-toggle-label">Menu</span>
+      <span class="site-header__menu-toggle-icon" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+    </button>
+
+    <nav class="site-header__nav" aria-label="Main">
+      <% helpers.main_navigation_links.each do |link| %>
+        <% active = helpers.nav_link_active?(link[:url]) %>
+        <% active_class = active ? "site-header__nav-link--active" : "" %>
+        <% link_options = {class: "site-header__nav-link #{active_class}".strip} %>
+        <% link_options[:"aria-current"] = "page" if active %>
+        <%= link_to link[:label], link[:url], link_options %>
+      <% end %>
+    </nav>
+
+    <div class="site-header__actions">
+      <%= link_to helpers.header_donate_label, helpers.header_donate_url, class: "button button--donate site-header__donate" %>
+    </div>
+  </div>
+
+  <div class="site-header__mobile-backdrop" hidden data-mobile-nav-backdrop></div>
+
+  <aside
+    class="site-header__drawer"
+    id="site-mobile-nav"
+    hidden
+    tabindex="-1"
+    aria-label="Mobile navigation"
+    data-mobile-nav-drawer>
+    <div class="site-header__drawer-header">
+      <a href="/" class="site-header__drawer-brand" aria-label="<%= helpers.site_name_text %>">
+        <%= image_tag helpers.header_brand_logo_url, alt: helpers.site_name_text, class: "site-header__drawer-brand-image" %>
+      </a>
+
+      <button type="button" class="site-header__drawer-close" data-mobile-nav-close>
+        <span class="site-header__drawer-close-label">Close</span>
+      </button>
+    </div>
+
+    <nav class="site-header__drawer-nav" aria-label="Mobile main">
+      <% helpers.main_navigation_links.each do |link| %>
+        <% active = helpers.nav_link_active?(link[:url]) %>
+        <% active_class = active ? "site-header__drawer-link--active" : "" %>
+        <% link_options = {class: "site-header__drawer-link #{active_class}".strip, data: {mobile_nav_link: true}} %>
+        <% link_options[:"aria-current"] = "page" if active %>
+        <%= link_to link[:label], link[:url], link_options %>
+      <% end %>
+    </nav>
+
+    <div class="site-header__drawer-actions">
+      <%= link_to helpers.header_donate_label, helpers.header_donate_url, class: "button button--donate site-header__drawer-donate" %>
+      <% if helpers.footer_contact_email.present? %>
+        <%= link_to helpers.footer_contact_email, "mailto:#{helpers.footer_contact_email}", class: "site-header__drawer-contact" %>
+      <% end %>
+    </div>
+  </aside>
+</header>

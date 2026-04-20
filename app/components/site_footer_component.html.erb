@@ -1,0 +1,45 @@
+<footer class="site-footer">
+  <div class="site-footer__main" data-animate="fade-up">
+    <div class="site-footer__brand">
+      <a href="/" class="site-footer__brand-link" aria-label="<%= helpers.site_name_text %>">
+        <%= image_tag helpers.footer_brand_logo_url, alt: helpers.site_name_text, class: "site-footer__brand-image" %>
+      </a>
+    </div>
+
+    <div class="site-footer__divider" aria-hidden="true"></div>
+
+    <div class="site-footer__mission-wrap">
+      <p class="site-footer__mission"><%= helpers.footer_mission_text %></p>
+    </div>
+  </div>
+
+  <div class="site-footer__bottom" data-animate="fade-up" data-animate-delay="0.08">
+    <div class="site-footer__bottom-group site-footer__bottom-group--links">
+      <nav class="site-footer__links" aria-label="Footer">
+        <% helpers.main_navigation_links.each do |link| %>
+          <%= link_to link[:label], link[:url], class: "site-footer__link" %>
+        <% end %>
+      </nav>
+    </div>
+
+    <% if helpers.social_links.any? %>
+      <div class="site-footer__bottom-group">
+        <div class="site-footer__social">
+          <% helpers.social_links.each do |link| %>
+            <%= link_to link[:url], class: "site-footer__social-link", target: "_blank", rel: "noopener", aria: { label: link[:name] } do %>
+              <span class="site-footer__social-icon" aria-hidden="true"><%= helpers.social_icon_svg(link[:icon]) %></span>
+              <span class="site-footer__social-text"><%= link[:name] %></span>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+
+    <% if helpers.footer_contact_email.present? %>
+      <div class="site-footer__bottom-group">
+        <p class="site-footer__label">Contact</p>
+        <%= link_to helpers.footer_contact_email, "mailto:#{helpers.footer_contact_email}", class: "site-footer__contact-link" %>
+      </div>
+    <% end %>
+  </div>
+</footer>

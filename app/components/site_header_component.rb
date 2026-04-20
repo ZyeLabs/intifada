@@ -1,0 +1,2 @@
+class SiteHeaderComponent < ApplicationComponent
+end

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% page_title = if current_page&.homepage?
+         "Home"
+       else
+         current_page&.seo_title.presence || current_page&.title.presence || site_name_text
+       end %>
+    <title><%= [page_title, site_name_text].uniq.join(" | ") %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <% if current_page&.description.present? %>
+      <meta name="description" content="<%= current_page.description %>">
+    <% end %>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= favicon_link_tag favicon_logo_url, type: "image/svg+xml" %>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@800;900&family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Lora:wght@400;700&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&family=Open+Sans:wght@800&family=Public+Sans:ital,wght@0,400;0,700;0,800;0,900;1,900&display=swap" rel="stylesheet">
+    <%= stylesheet_link_tag "application", media: "all" %>
+    <%= javascript_pack_tag "application", "data-turbolinks-track": "reload" %>
+  </head>
+  <body class="site-body">
+    <%= render SiteHeaderComponent.new %>
+    <%= yield %>
+    <%= render SiteFooterComponent.new %>
+  </body>
+</html>
