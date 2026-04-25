@@ -1,2 +1,0 @@
-class SiteFooterComponent < ApplicationComponent
-end

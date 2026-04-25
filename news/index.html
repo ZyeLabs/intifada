@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>News | Social Intifada</title>
+    <meta name="description" content="News, analysis, campaign updates, and archive stories from Social Intifada.">
+    <link rel="icon" href="../assets/img/favicon.ico">
+    <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@800;900&family=Inter:wght@400;500;600;700;800;900&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/site.css">
+    <script src="../assets/js/site.js" defer></script>
+  </head>
+  <body class="site-body">
+    <header class="site-header" data-mobile-nav>
+      <div class="site-header__main">
+        <a href="../" class="site-header__brand" aria-label="Social Intifada"><img src="../assets/img/white-bg-logo.svg" alt="Social Intifada" class="site-header__brand-image"></a>
+        <button type="button" class="site-header__menu-toggle" aria-expanded="false" aria-controls="site-mobile-nav" data-mobile-nav-toggle><span class="site-header__menu-toggle-label">Menu</span><span class="site-header__menu-toggle-icon" aria-hidden="true"><span></span><span></span><span></span></span></button>
+        <nav class="site-header__nav" aria-label="Main">
+          <a href="../" class="site-header__nav-link">Home</a>
+          <a href="../about-us/" class="site-header__nav-link">About Us</a>
+          <a href="./" class="site-header__nav-link is-active" aria-current="page">News</a>
+          <a href="../events/" class="site-header__nav-link">Events</a>
+          <a href="../campaigns/" class="site-header__nav-link">Campaigns</a>
+        </nav>
+        <div class="site-header__actions"><a href="../donate/" class="site-header__donate">Support Us</a></div>
+      </div>
+      <div class="site-header__mobile-backdrop" hidden data-mobile-nav-backdrop></div>
+      <aside class="site-header__drawer" id="site-mobile-nav" hidden tabindex="-1" aria-label="Mobile navigation" data-mobile-nav-drawer>
+        <div class="site-header__drawer-header"><a href="../" class="site-header__drawer-brand" aria-label="Social Intifada"><img src="../assets/img/white-bg-logo.svg" alt="Social Intifada" class="site-header__drawer-brand-image"></a><button type="button" class="site-header__drawer-close" data-mobile-nav-close>Close</button></div>
+        <nav class="site-header__drawer-nav" aria-label="Mobile main">
+          <a href="../" class="site-header__drawer-link" data-mobile-nav-link>Home</a>
+          <a href="../about-us/" class="site-header__drawer-link" data-mobile-nav-link>About Us</a>
+          <a href="./" class="site-header__drawer-link is-active" aria-current="page" data-mobile-nav-link>News</a>
+          <a href="../events/" class="site-header__drawer-link" data-mobile-nav-link>Events</a>
+          <a href="../campaigns/" class="site-header__drawer-link" data-mobile-nav-link>Campaigns</a>
+        </nav>
+        <div class="site-header__drawer-actions"><a href="../donate/" class="site-header__drawer-donate">Support Us</a></div>
+      </aside>
+    </header>
+
+    <nav class="news-filter-bar" aria-label="Filter news by tag">
+      <div class="news-filter-bar__inner">
+        <p class="news-filter-bar__label">Topics</p>
+        <div class="news-filter-bar__chips">
+          <a href="./" class="news-filter-bar__link is-active" aria-current="page">All</a>
+          <a href="#archive" class="news-filter-bar__link">Palestine advocacy</a>
+          <a href="#archive" class="news-filter-bar__link">Campaigns</a>
+          <a href="#archive" class="news-filter-bar__link">Education</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="page page--news-index">
+      <section class="news-feature" aria-label="Lead story and related articles">
+        <article class="news-feature__main" data-reveal>
+          <div class="news-feature__image-frame">
+            <a href="sample-story/" class="news-feature__image-link" aria-label="Community briefing: why digital pressure still matters">
+              <img src="../assets/img/events/upcoming-default.jpg" alt="People gathering for an awareness event" class="news-feature__image" loading="eager" decoding="async">
+            </a>
+            <span class="news-feature__badge">Breaking news</span>
+          </div>
+          <div class="news-feature__content">
+            <h1 class="news-feature__title"><a href="sample-story/" class="news-feature__title-link">Community briefing: why digital pressure still matters</a></h1>
+            <p class="news-feature__summary">A static starter story showing the editorial hierarchy, share tools, and archive links without any server side rendering.</p>
+            <p class="news-feature__meta"><span class="news-feature__author">By Editorial Desk</span><span class="news-feature__dot" aria-hidden="true"> - </span><time datetime="2026-04-25">April 25, 2026</time></p>
+          </div>
+        </article>
+
+        <aside class="news-related" aria-label="Related articles" data-reveal>
+          <h2 class="news-related__heading">Related articles</h2>
+          <div class="news-related__list">
+            <article class="news-related__item">
+              <a href="../campaigns/sample-campaign/" class="news-related__media-link" aria-label="New action pack prepared for supporters"><img src="../assets/img/events/past-default.png" alt="Campaign artwork" class="news-related__media" loading="lazy" decoding="async"></a>
+              <div class="news-related__content">
+                <p class="news-related__tag">Campaigns</p>
+                <h3 class="news-related__title"><a href="../campaigns/sample-campaign/" class="news-related__title-link">New action pack prepared for supporters</a></h3>
+                <p class="news-related__summary">Starter campaign details for a static branch.</p>
+              </div>
+            </article>
+            <article class="news-related__item">
+              <a href="../events/sample-event/" class="news-related__media-link" aria-label="Online teach-in and organizing session"><img src="../assets/img/events/past-spotlight.png" alt="Event image" class="news-related__media" loading="lazy" decoding="async"></a>
+              <div class="news-related__content">
+                <p class="news-related__tag">Events</p>
+                <h3 class="news-related__title"><a href="../events/sample-event/" class="news-related__title-link">Online teach-in and organizing session</a></h3>
+                <p class="news-related__summary">A catalogue detail page with no backend dependency.</p>
+              </div>
+            </article>
+          </div>
+        </aside>
+      </section>
+
+      <section class="news-calendar" id="archive" aria-label="News archive" data-reveal>
+        <header class="news-calendar__header">
+          <h2 class="news-calendar__title">News Archive</h2>
+        </header>
+        <div class="news-calendar__months">
+          <section class="news-calendar-month" aria-label="April 2026">
+            <div class="news-calendar-month__label"><p class="news-calendar-month__month">April 2026</p></div>
+            <div class="news-calendar-month__cards">
+              <article class="news-archive-card">
+                <a href="sample-story/" class="news-archive-card__image-link" aria-label="Community briefing: why digital pressure still matters"><img src="../assets/img/events/upcoming-default.jpg" alt="People gathering for an awareness event" class="news-archive-card__image" loading="lazy" decoding="async"></a>
+                <div class="news-archive-card__content">
+                  <h3 class="news-archive-card__title"><a href="sample-story/" class="news-archive-card__title-link">Community briefing: why digital pressure still matters</a></h3>
+                  <time class="news-archive-card__date" datetime="2026-04-25">April 25, 2026</time>
+                </div>
+              </article>
+              <article class="news-archive-card">
+                <a href="../campaigns/sample-campaign/" class="news-archive-card__image-link" aria-label="New action pack prepared for supporters"><img src="../assets/img/events/past-default.png" alt="Campaign artwork" class="news-archive-card__image" loading="lazy" decoding="async"></a>
+                <div class="news-archive-card__content">
+                  <h3 class="news-archive-card__title"><a href="../campaigns/sample-campaign/" class="news-archive-card__title-link">New action pack prepared for supporters</a></h3>
+                  <time class="news-archive-card__date" datetime="2026-04-19">April 19, 2026</time>
+                </div>
+              </article>
+              <article class="news-archive-card">
+                <a href="../events/sample-event/" class="news-archive-card__image-link" aria-label="Online teach-in and organizing session"><img src="../assets/img/events/past-spotlight.png" alt="Event image" class="news-archive-card__image" loading="lazy" decoding="async"></a>
+                <div class="news-archive-card__content">
+                  <h3 class="news-archive-card__title"><a href="../events/sample-event/" class="news-archive-card__title-link">Online teach-in and organizing session</a></h3>
+                  <time class="news-archive-card__date" datetime="2026-04-18">April 18, 2026</time>
+                </div>
+              </article>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__main">
+        <div class="site-footer__brand"><a href="../" aria-label="Social Intifada"><img src="../assets/img/black-bg-logo.svg" alt="Social Intifada" class="site-footer__brand-image"></a></div>
+        <div class="site-footer__divider" aria-hidden="true"></div>
+        <div class="site-footer__mission-wrap"><p class="site-footer__mission">Committed to front-foot digital activism grounded in justice, education, and solidarity with Palestine and Bilad Ash Shaam.</p></div>
+      </div>
+      <div class="site-footer__bottom">
+        <nav class="site-footer__links" aria-label="Footer">
+          <a href="../" class="site-footer__link">Home</a>
+          <a href="../about-us/" class="site-footer__link">About Us</a>
+          <a href="./" class="site-footer__link">News</a>
+          <a href="../events/" class="site-footer__link">Events</a>
+          <a href="../campaigns/" class="site-footer__link">Campaigns</a>
+        </nav>
+        <div class="site-footer__social"><a href="https://www.instagram.com/socialintifada/" class="site-footer__social-link" target="_blank" rel="noopener">Instagram</a></div>
+      </div>
+    </footer>
+  </body>
+</html>

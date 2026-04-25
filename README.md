@@ -1,96 +1,40 @@
-# Intifada CMS Starter
+# Social Intifada Static Site
 
-Rails + Spina CMS starter configured for a **Figma MCP + AI-assisted development workflow**.
+This branch is a plain static website for GitHub Pages. It has no server runtime, no database, no admin area, and no build step.
 
-## Current stack
+## Structure
 
-- Ruby `3.2.3`
-- Rails `6.1.7.x`
-- Spina CMS `2.19.0`
-- PostgreSQL `16` (Docker Compose)
-- `tailwindcss-ruby` pinned to `~> 3.4.19` for Spina asset compatibility
+- `index.html` - homepage
+- `about-us/index.html` - about page
+- `about/index.html` - static redirect shim to `about-us/`
+- `news/index.html` - news archive
+- `events/index.html` - events catalogue
+- `campaigns/index.html` - campaigns catalogue
+- `donate/index.html` - donation page
+- `assets/css/site.css` - all styling
+- `assets/js/site.js` - all browser behavior
+- `assets/img/` - images, logos, and icons
 
-## Website structure (implemented)
-
-- `Home` (newsroom front page)
-- `News` (resource index for articles)
-- `Events` (resource index for events)
-- `Campaigns` (resource index for campaigns)
-- `Donate`
-
-Resource detail templates are also in place for:
-
-- `Article`
-- `Event`
-- `Campaign`
-
-## Quick start
-
-1. Copy env template:
-
-   ```bash
-   cp .env.example .env
-   ```
-
-2. Bootstrap everything:
-
-   ```bash
-   ./bin/setup_cms
-   ```
-
-3. Start the app:
-
-   ```bash
-   bundle exec rails server
-   ```
-
-4. Open:
-
-- Site: `http://localhost:3000`
-- Spina admin: `http://localhost:3000/admin`
-
-Admin user credentials are read from `.env` (`SPINA_ADMIN_EMAIL`, `SPINA_ADMIN_PASSWORD`).
-
-## AI usage policy in this project
-
-AI is intended for **development workflow only** (design-to-code, scaffolding, content drafts, refactors).  
-No runtime AI feature is wired into the website.
-
-## Figma MCP + Spina workflow
-
-Use this loop while building pages:
-
-1. Pull Figma section context with MCP (`get_screenshot`, `get_design_context`) for a target frame/node.
-2. Map that section to editable Spina parts in [default.rb](/home/suleiman/code/intifada/config/initializers/themes/default.rb).
-3. Implement/update ERB templates in [app/views/default](/home/suleiman/code/intifada/app/views/default).
-4. Keep editable content in CMS parts (`content(:part_name)`), not hardcoded text.
-5. Validate in `/admin`, then preview on the public route.
-
-Detailed playbook: [docs/figma-mcp-playbook.md](/home/suleiman/code/intifada/docs/figma-mcp-playbook.md)
-
-## Useful commands
+## Local Preview
 
 ```bash
-# start database only
-docker compose up -d db
-
-# run migrations
-bundle exec rails db:migrate
-
-# run Spina installer once on a fresh project
-bundle exec rails g spina:install --silent
-
-# set/update first admin from env
-bundle exec rails spina:setup_admin
-
-# sync pages/resources/navigation from theme config
-bundle exec rails spina:sync_site
-
-# rebuild Spina Tailwind assets
-bundle exec rails spina:tailwind:build
+python3 -m http.server 8080
 ```
 
-## Notes
+Open `http://127.0.0.1:8080/`.
 
-- The project includes a local Postgres compose service on port `5433` by default (change in `.env`).
-- If this is a fresh machine, run `bundle install` before `./bin/setup_cms`.
+## GitHub Pages
+
+Configure Pages to deploy from the branch root:
+
+1. Go to repository Settings.
+2. Open Pages.
+3. Set Source to "Deploy from a branch".
+4. Select this branch and `/(root)`.
+5. Save.
+
+The `.nojekyll` file is included so GitHub Pages serves these files directly.
+
+## Editing Content
+
+Edit the HTML files directly. Keep links relative, without a leading slash, so the site works under both the repository URL and a future custom domain.

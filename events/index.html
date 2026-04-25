@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Events | Social Intifada</title>
+    <meta name="description" content="Upcoming and completed Social Intifada events.">
+    <link rel="icon" href="../assets/img/favicon.ico">
+    <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@800;900&family=Inter:wght@400;500;600;700;800;900&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/site.css">
+    <script src="../assets/js/site.js" defer></script>
+  </head>
+  <body class="site-body">
+    <header class="site-header" data-mobile-nav>
+      <div class="site-header__main">
+        <a href="../" class="site-header__brand" aria-label="Social Intifada"><img src="../assets/img/white-bg-logo.svg" alt="Social Intifada" class="site-header__brand-image"></a>
+        <button type="button" class="site-header__menu-toggle" aria-expanded="false" aria-controls="site-mobile-nav" data-mobile-nav-toggle><span class="site-header__menu-toggle-label">Menu</span><span class="site-header__menu-toggle-icon" aria-hidden="true"><span></span><span></span><span></span></span></button>
+        <nav class="site-header__nav" aria-label="Main">
+          <a href="../" class="site-header__nav-link">Home</a>
+          <a href="../about-us/" class="site-header__nav-link">About Us</a>
+          <a href="../news/" class="site-header__nav-link">News</a>
+          <a href="./" class="site-header__nav-link is-active" aria-current="page">Events</a>
+          <a href="../campaigns/" class="site-header__nav-link">Campaigns</a>
+        </nav>
+        <div class="site-header__actions"><a href="../donate/" class="site-header__donate">Support Us</a></div>
+      </div>
+      <div class="site-header__mobile-backdrop" hidden data-mobile-nav-backdrop></div>
+      <aside class="site-header__drawer" id="site-mobile-nav" hidden tabindex="-1" aria-label="Mobile navigation" data-mobile-nav-drawer>
+        <div class="site-header__drawer-header"><a href="../" class="site-header__drawer-brand" aria-label="Social Intifada"><img src="../assets/img/white-bg-logo.svg" alt="Social Intifada" class="site-header__drawer-brand-image"></a><button type="button" class="site-header__drawer-close" data-mobile-nav-close>Close</button></div>
+        <nav class="site-header__drawer-nav" aria-label="Mobile main">
+          <a href="../" class="site-header__drawer-link" data-mobile-nav-link>Home</a>
+          <a href="../about-us/" class="site-header__drawer-link" data-mobile-nav-link>About Us</a>
+          <a href="../news/" class="site-header__drawer-link" data-mobile-nav-link>News</a>
+          <a href="./" class="site-header__drawer-link is-active" aria-current="page" data-mobile-nav-link>Events</a>
+          <a href="../campaigns/" class="site-header__drawer-link" data-mobile-nav-link>Campaigns</a>
+        </nav>
+        <div class="site-header__drawer-actions"><a href="../donate/" class="site-header__drawer-donate">Support Us</a></div>
+      </aside>
+    </header>
+
+    <main class="page page--events-catalogue collection-catalogue">
+      <section class="collection-catalogue__section" id="upcoming-events" data-reveal>
+        <header class="collection-catalogue__heading">
+          <h1>Upcoming Events</h1>
+        </header>
+        <div class="collection-catalogue__grid">
+          <article class="catalogue-card">
+            <a href="sample-event/" class="catalogue-card__media-link" aria-label="Online teach-in and organizing session">
+              <img src="../assets/img/events/upcoming-default.jpg" alt="People gathering for an awareness event" class="catalogue-card__media" loading="lazy" decoding="async">
+            </a>
+            <div class="catalogue-card__body">
+              <div class="catalogue-card__top">
+                <div class="catalogue-card__stamp"><span class="catalogue-card__stamp-value">24</span><span class="catalogue-card__stamp-label">MAY</span></div>
+                <div class="catalogue-card__meta-block"><p class="catalogue-card__eyebrow">Upcoming event</p><p class="catalogue-card__detail"><time datetime="2026-05-24T18:30:00">24 May 2026</time> - 18:30</p></div>
+              </div>
+              <h2 class="catalogue-card__title"><a href="sample-event/" class="catalogue-card__title-link">Online teach-in and organizing session</a></h2>
+              <p class="catalogue-card__summary">A static event detail page that keeps the catalogue layout symmetric and easy to scan.</p>
+              <div class="catalogue-card__footer"><p class="catalogue-card__supporting">Online</p><a href="sample-event/" class="catalogue-card__button">View details</a></div>
+            </div>
+          </article>
+
+          <article class="catalogue-card">
+            <a href="./" class="catalogue-card__media-link" aria-label="Community mobilization briefing">
+              <img src="../assets/img/events/past-spotlight.png" alt="Event spotlight image" class="catalogue-card__media" loading="lazy" decoding="async">
+            </a>
+            <div class="catalogue-card__body">
+              <div class="catalogue-card__top">
+                <div class="catalogue-card__stamp"><span class="catalogue-card__stamp-value">--</span><span class="catalogue-card__stamp-label">TBC</span></div>
+                <div class="catalogue-card__meta-block"><p class="catalogue-card__eyebrow">Upcoming event</p><p class="catalogue-card__detail">Date to be confirmed</p></div>
+              </div>
+              <h2 class="catalogue-card__title"><a href="./" class="catalogue-card__title-link">Community mobilization briefing</a></h2>
+              <p class="catalogue-card__summary">Placeholder event card ready for the next announcement.</p>
+              <div class="catalogue-card__footer"><p class="catalogue-card__supporting">Venue TBC</p><a href="./" class="catalogue-card__button">View events</a></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="collection-catalogue__section" id="completed-events" data-reveal>
+        <header class="collection-catalogue__heading">
+          <h2>Completed Events</h2>
+        </header>
+        <div class="collection-catalogue__grid">
+          <article class="catalogue-card catalogue-card--past">
+            <a href="./" class="catalogue-card__media-link" aria-label="Past community briefing">
+              <img src="../assets/img/events/past-default.png" alt="Past event artwork" class="catalogue-card__media" loading="lazy" decoding="async">
+            </a>
+            <div class="catalogue-card__body">
+              <div class="catalogue-card__top">
+                <div class="catalogue-card__stamp"><span class="catalogue-card__stamp-value">18</span><span class="catalogue-card__stamp-label">APR</span></div>
+                <div class="catalogue-card__meta-block"><p class="catalogue-card__eyebrow">Completed event</p><p class="catalogue-card__detail"><time datetime="2026-04-18">18 Apr 2026</time></p></div>
+              </div>
+              <h2 class="catalogue-card__title"><a href="./" class="catalogue-card__title-link">Past community briefing</a></h2>
+              <p class="catalogue-card__summary">Completed event placeholder for the static archive section.</p>
+              <div class="catalogue-card__footer"><p class="catalogue-card__supporting">Event archive</p><a href="./" class="catalogue-card__button">View event</a></div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__main">
+        <div class="site-footer__brand"><a href="../" aria-label="Social Intifada"><img src="../assets/img/black-bg-logo.svg" alt="Social Intifada" class="site-footer__brand-image"></a></div>
+        <div class="site-footer__divider" aria-hidden="true"></div>
+        <div class="site-footer__mission-wrap"><p class="site-footer__mission">Committed to front-foot digital activism grounded in justice, education, and solidarity with Palestine and Bilad Ash Shaam.</p></div>
+      </div>
+      <div class="site-footer__bottom">
+        <nav class="site-footer__links" aria-label="Footer">
+          <a href="../" class="site-footer__link">Home</a>
+          <a href="../about-us/" class="site-footer__link">About Us</a>
+          <a href="../news/" class="site-footer__link">News</a>
+          <a href="./" class="site-footer__link">Events</a>
+          <a href="../campaigns/" class="site-footer__link">Campaigns</a>
+        </nav>
+        <div class="site-footer__social"><a href="https://www.instagram.com/socialintifada/" class="site-footer__social-link" target="_blank" rel="noopener">Instagram</a></div>
+      </div>
+    </footer>
+  </body>
+</html>
