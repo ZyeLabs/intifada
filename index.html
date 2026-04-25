@@ -1,215 +1,260 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Home | Social Intifada</title>
-    <meta name="description" content="Social Intifada is an independent digital activism platform for awareness, education, events, campaigns, and principled reporting.">
-    <link rel="icon" href="assets/img/favicon.ico">
-    <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="MZ7yzXntT1b_n9BWRtW9A_nJLaUi8peGVw3X4aZR9jFhsQsiV7Q-TDzSARuI_Irf4EcptXx_BGLdKV1RLAs6qA" />
+    
+    <link rel="shortcut icon" type="image/svg+xml" href="white-bg-logo.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@800;900&family=Inter:wght@400;500;600;700;800;900&family=Lora:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/site.css">
-    <script src="assets/js/site.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@800;900&family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Lora:wght@400;700&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&family=Open+Sans:wght@800&family=Public+Sans:ital,wght@0,400;0,700;0,800;0,900;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="assets/application.debug-72dcc2f546fbed2df7582fd364d9a541491f81ecb430cc68ba11ecf07d53f6cf.css" />
+    <script src="packs/js/application-24c5f98c67d9973989b0.js" data-turbolinks-track="reload"></script>
   </head>
   <body class="site-body">
     <header class="site-header" data-mobile-nav>
-      <div class="site-header__main">
-        <a href="./" class="site-header__brand" aria-label="Social Intifada">
-          <img src="assets/img/white-bg-logo.svg" alt="Social Intifada" class="site-header__brand-image">
-        </a>
-        <button type="button" class="site-header__menu-toggle" aria-expanded="false" aria-controls="site-mobile-nav" data-mobile-nav-toggle>
-          <span class="site-header__menu-toggle-label">Menu</span>
-          <span class="site-header__menu-toggle-icon" aria-hidden="true"><span></span><span></span><span></span></span>
-        </button>
-        <nav class="site-header__nav" aria-label="Main">
-          <a href="./" class="site-header__nav-link is-active" aria-current="page">Home</a>
-          <a href="about-us/" class="site-header__nav-link">About Us</a>
-          <a href="news/" class="site-header__nav-link">News</a>
-          <a href="events/" class="site-header__nav-link">Events</a>
-          <a href="campaigns/" class="site-header__nav-link">Campaigns</a>
-        </nav>
-        <div class="site-header__actions">
-          <a href="donate/" class="site-header__donate">Support Us</a>
-        </div>
-      </div>
-      <div class="site-header__mobile-backdrop" hidden data-mobile-nav-backdrop></div>
-      <aside class="site-header__drawer" id="site-mobile-nav" hidden tabindex="-1" aria-label="Mobile navigation" data-mobile-nav-drawer>
-        <div class="site-header__drawer-header">
-          <a href="./" class="site-header__drawer-brand" aria-label="Social Intifada">
-            <img src="assets/img/white-bg-logo.svg" alt="Social Intifada" class="site-header__drawer-brand-image">
-          </a>
-          <button type="button" class="site-header__drawer-close" data-mobile-nav-close>Close</button>
-        </div>
-        <nav class="site-header__drawer-nav" aria-label="Mobile main">
-          <a href="./" class="site-header__drawer-link is-active" aria-current="page" data-mobile-nav-link>Home</a>
-          <a href="about-us/" class="site-header__drawer-link" data-mobile-nav-link>About Us</a>
-          <a href="news/" class="site-header__drawer-link" data-mobile-nav-link>News</a>
-          <a href="events/" class="site-header__drawer-link" data-mobile-nav-link>Events</a>
-          <a href="campaigns/" class="site-header__drawer-link" data-mobile-nav-link>Campaigns</a>
-        </nav>
-        <div class="site-header__drawer-actions">
-          <a href="donate/" class="site-header__drawer-donate">Support Us</a>
-        </div>
-      </aside>
-    </header>
+  <div class="site-header__main">
+    <a href="index.html" class="site-header__brand" aria-label="Social Intifada">
+      <img alt="Social Intifada" class="site-header__brand-image" src="white-bg-logo.svg" />
+    </a>
+
+    <button
+      type="button"
+      class="site-header__menu-toggle"
+      aria-expanded="false"
+      aria-controls="site-mobile-nav"
+      data-mobile-nav-toggle>
+      <span class="site-header__menu-toggle-label">Menu</span>
+      <span class="site-header__menu-toggle-icon" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+    </button>
+
+    <nav class="site-header__nav" aria-label="Main">
+        <a class="site-header__nav-link site-header__nav-link--active" aria-current="page" href="index.html">Home</a>
+        <a class="site-header__nav-link" href="about-us.html">About Us</a>
+        <a class="site-header__nav-link" href="news.html">News</a>
+        <a class="site-header__nav-link" href="events.html">Events</a>
+        <a class="site-header__nav-link" href="campaigns.html">Campaigns</a>
+    </nav>
+
+    <div class="site-header__actions">
+      <a class="button button--donate site-header__donate" href="donate.html">Support Us</a>
+    </div>
+  </div>
+
+  <div class="site-header__mobile-backdrop" hidden data-mobile-nav-backdrop></div>
+
+  <aside
+    class="site-header__drawer"
+    id="site-mobile-nav"
+    hidden
+    tabindex="-1"
+    aria-label="Mobile navigation"
+    data-mobile-nav-drawer>
+    <div class="site-header__drawer-header">
+      <a href="index.html" class="site-header__drawer-brand" aria-label="Social Intifada">
+        <img alt="Social Intifada" class="site-header__drawer-brand-image" src="white-bg-logo.svg" />
+      </a>
+
+      <button type="button" class="site-header__drawer-close" data-mobile-nav-close>
+        <span class="site-header__drawer-close-label">Close</span>
+      </button>
+    </div>
+
+    <nav class="site-header__drawer-nav" aria-label="Mobile main">
+        <a class="site-header__drawer-link site-header__drawer-link--active" data-mobile-nav-link="true" aria-current="page" href="index.html">Home</a>
+        <a class="site-header__drawer-link" data-mobile-nav-link="true" href="about-us.html">About Us</a>
+        <a class="site-header__drawer-link" data-mobile-nav-link="true" href="news.html">News</a>
+        <a class="site-header__drawer-link" data-mobile-nav-link="true" href="events.html">Events</a>
+        <a class="site-header__drawer-link" data-mobile-nav-link="true" href="campaigns.html">Campaigns</a>
+    </nav>
+
+    <div class="site-header__drawer-actions">
+      <a class="button button--donate site-header__drawer-donate" href="donate.html">Support Us</a>
+    </div>
+  </aside>
+</header>
 
     <main class="homepage">
-      <section class="breaking-strip home-band" aria-label="Breaking update">
-        <div class="home-shell">
-          <p class="breaking-strip__content">
-            <span class="breaking-strip__label">Breaking</span>
-            <a href="news/sample-story/" class="breaking-strip__link">Community briefing: why digital pressure still matters</a>
-          </p>
-        </div>
-      </section>
 
-      <div class="page page--homepage">
-        <section class="home-hero" aria-label="Lead story and latest news">
-          <div class="home-hero__lead" data-reveal>
+    <section class="breaking-strip home-band" aria-label="Breaking update">
+      <div class="home-shell">
+        <p class="breaking-strip__content" data-animate="fade-up" data-animate-origin="top">
+          <span class="breaking-strip__label" data-animate="scale-in" data-animate-delay="0.14">Breaking</span>
+          <a class="breaking-strip__link" href="news/calls-grow-for-release-of-marwan-barghouti-after-24-years-in-detention.html">Calls Grow for Release of Marwan Barghouti After 24 Years in Detention</a>
+        </p>
+      </div>
+    </section>
+
+    <div class="page page--homepage">
+      <section class="home-hero " aria-label="Lead story and latest news">
+          <div class="home-hero__lead">
             <article class="lead-story">
               <div class="lead-story__media-wrap">
-                <a href="news/sample-story/" class="lead-story__image-link">
-                  <img src="assets/img/events/upcoming-default.jpg" alt="People gathering for an awareness event" class="lead-story__image" decoding="async">
-                </a>
-                <span class="lead-story__badge">Breaking news</span>
+                <a class="lead-story__image-link" data-animate="clip-reveal" href="news/calls-grow-for-release-of-marwan-barghouti-after-24-years-in-detention.html"><img alt="Calls Grow for Release of Marwan Barghouti After 24 Years in Detention" class="lead-story__image" decoding="async" src="http://localhost:3000/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--0a2dad510bddb46ad5c79630f27dd99e9137d4aa/SaveClip.App_671110736_18050128661548514_5390615614925918571_n.jpg" /></a>
+                <span class="lead-story__badge" data-animate="scale-in" data-animate-delay="0.12">BREAKING NEWS</span>
               </div>
+
               <h1 class="lead-story__title">
-                <a href="news/sample-story/" class="lead-story__title-link">Community briefing: why digital pressure still matters</a>
+                <a class="lead-story__title-link" data-animate="word-stagger" data-animate-delay="0.08" href="news/calls-grow-for-release-of-marwan-barghouti-after-24-years-in-detention.html">Calls Grow for Release of Marwan Barghouti After 24 Years in Detention</a>
               </h1>
-              <p class="lead-story__standfirst">A starter editorial package for the static site, ready to replace with live reporting as the branch becomes the public website.</p>
-              <p class="lead-story__meta"><span class="lead-story__author">By Editorial Desk</span></p>
+                <p class="lead-story__standfirst" data-animate="fade-up" data-animate-delay="0.2">Marwan Barghouti has been imprisoned by Israel since 2002. Supporters are calling for his release and allege abuse in custody, though this is unverified.</p>
+              <p class="lead-story__meta" data-animate="fade-up" data-animate-delay="0.28">
+                <span class="lead-story__author">BY Editorial</span>
+              </p>
             </article>
           </div>
 
-          <aside class="home-hero__latest" aria-label="Latest news" data-reveal>
-            <header class="home-latest__header">
+          <aside class="home-hero__latest" aria-label="Latest news">
+            <header class="home-latest__header" data-animate="fade-left" data-animate-delay="0.18">
               <h2>Latest news</h2>
-              <a href="news/" class="home-latest__header-link">View all</a>
+              <a class="home-latest__header-link" href="news.html">View all</a>
             </header>
-            <div class="home-latest__list">
-              <article class="home-latest__item">
-                <p class="home-latest__kicker">Palestine advocacy</p>
-                <h3 class="home-latest__title"><a href="news/sample-story/" class="home-latest__title-link">Community briefing: why digital pressure still matters</a></h3>
-                <p class="home-latest__snippet">Digital campaigning is most useful when it gives people a clear action and a shared language.</p>
-                <p class="home-latest__time">Latest</p>
-              </article>
-              <article class="home-latest__item">
-                <p class="home-latest__kicker">Campaigns</p>
-                <h3 class="home-latest__title"><a href="campaigns/sample-campaign/" class="home-latest__title-link">New action pack prepared for supporters</a></h3>
-                <p class="home-latest__snippet">Starter campaign content is now static and editable in the repo.</p>
-                <p class="home-latest__time">This week</p>
-              </article>
-              <article class="home-latest__item">
-                <p class="home-latest__kicker">Events</p>
-                <h3 class="home-latest__title"><a href="events/sample-event/" class="home-latest__title-link">Online teach-in and organizing session</a></h3>
-                <p class="home-latest__snippet">The events catalogue now works without any server side rendering.</p>
-                <p class="home-latest__time">Upcoming</p>
-              </article>
+
+            <div class="home-latest__list" data-animate-group="stagger" data-animate-delay="0.24">
+                <article class="home-latest__item">
+                  <p class="home-latest__kicker">BREAKING NEWS</p>
+                  <h3 class="home-latest__title">
+                    <a class="home-latest__title-link" href="news/calls-grow-for-release-of-marwan-barghouti-after-24-years-in-detention.html">Calls Grow for Release of Marwan Barghouti After 24 Years in Detention</a>
+                  </h3>
+                    <p class="home-latest__snippet">Marwan Barghouti has been imprisoned by Israel since 2002. Supporters are cal...</p>
+                  <p class="home-latest__time">15 APR 2026</p>
+                </article>
             </div>
-            <a href="news/" class="home-latest__button">View all news</a>
+
+            <a class="home-latest__button" href="news.html">View all news</a>
           </aside>
-        </section>
-      </div>
-
-      <section class="home-mission home-band" aria-label="Our mission">
-        <div class="home-shell">
-          <div class="home-mission__inner">
-            <div>
-              <h2 class="home-mission__heading">Our mission</h2>
-              <p class="home-mission__copy">Unapologetic digital activism grounded in justice, awareness, and principled solidarity.</p>
-            </div>
-          </div>
-        </div>
       </section>
+    </div>
 
-      <div class="page page--homepage-secondary">
-        <section class="home-action-grid" aria-label="Campaigns and events">
-          <div class="home-action-grid__inner">
-            <div class="home-action-section home-action-section--green" data-reveal>
-              <header class="home-section-title home-section-title--green">
+  <section class="home-mission home-band" aria-label="Our mission">
+    <div class="home-shell">
+      <div class="home-mission__inner">
+          <h2 class="home-mission__heading" data-animate="fade-up">Our mission</h2>
+          <p class="home-mission__copy" data-animate="fade-up" data-animate-delay="0.12">Social Intifada is committed to unapologetic, front-foot digital activism. We do not negotiate with censorship.</p>
+          <span class="home-mission__accent" aria-hidden="true" data-animate="line-grow" data-animate-delay="0.28"></span>
+      </div>
+    </div>
+  </section>
+
+    <div class="page page--homepage page--homepage-secondary">
+      <section class="home-action-grid" aria-label="Campaigns and events">
+        <div class="home-action-grid__inner">
+            <div class="home-action-section home-action-section--green">
+              <header class="home-section-title home-section-title--green" data-animate="fade-up">
                 <h2>Active campaigns</h2>
-                <a href="campaigns/" class="home-section-title__link">See all</a>
+                <a class="home-section-title__link" href="campaigns.html">See all</a>
               </header>
-              <div class="home-action-list">
-                <article class="home-action-card home-action-card--green">
-                  <div class="home-action-card__meta"><p class="home-action-card__meta-text">Deadline 30 Jun 2026</p></div>
-                  <h3 class="home-action-card__title"><a href="campaigns/sample-campaign/" class="home-action-card__title-link">Pressure campaign starter pack</a></h3>
-                  <p class="home-action-card__details">A static campaign card with a clear action and editable copy.</p>
-                  <div class="home-action-card__footer"><a href="campaigns/sample-campaign/" class="home-action-card__link">Take action</a></div>
-                </article>
-                <article class="home-action-card home-action-card--green">
-                  <div class="home-action-card__meta"><p class="home-action-card__meta-text">Always on</p></div>
-                  <h3 class="home-action-card__title"><a href="donate/" class="home-action-card__title-link">Sustain the platform</a></h3>
-                  <p class="home-action-card__details">Support content, event coverage, and publishing infrastructure.</p>
-                  <div class="home-action-card__footer"><a href="donate/" class="home-action-card__link">Support us</a></div>
-                </article>
+
+              <div class="home-action-list" data-animate-group="stagger" data-animate-delay="0.08">
+
+                  <article class="home-action-card home-action-card--green">
+                      <div class="home-action-card__meta">
+                        <p class="home-action-card__meta-text">Deadline 20 APR 2026</p>
+                      </div>
+
+                    <h3 class="home-action-card__title">
+                      <a class="home-action-card__title-link" target="_blank" rel="noopener" href="https://www.instagram.com/p/DXSTekmkbhH/?img_index=1">Calls for Action Against Stolen Palestinian Land</a>
+                    </h3>
+
+                      <p class="home-action-card__details">A campaign is calling on people to take action against a virtual real estate expo advertising stolen Palesti…</p>
+
+                    <div class="home-action-card__footer">
+                      <a class="home-action-card__link" target="_blank" rel="noopener" href="https://www.instagram.com/p/DXSTekmkbhH/?img_index=1">Repost</a>
+                    </div>
+                  </article>
               </div>
             </div>
-
-            <div class="home-action-section home-action-section--black" data-reveal>
-              <header class="home-section-title home-section-title--black">
+            <div class="home-action-section home-action-section--black">
+              <header class="home-section-title home-section-title--black" data-animate="fade-up">
                 <h2>Upcoming events</h2>
-                <a href="events/" class="home-section-title__link">See all</a>
+                <a class="home-section-title__link" href="events.html">See all</a>
               </header>
-              <div class="home-action-list">
-                <article class="home-action-card home-action-card--black">
-                  <div class="home-action-card__meta"><p class="home-action-card__meta-text">24 May 2026 - 18:30</p></div>
-                  <h3 class="home-action-card__title"><a href="events/sample-event/" class="home-action-card__title-link">Online teach-in and organizing session</a></h3>
-                  <p class="home-action-card__details">Location: Online</p>
-                  <div class="home-action-card__footer"><a href="events/sample-event/" class="home-action-card__link">View details</a></div>
-                </article>
-                <article class="home-action-card home-action-card--black">
-                  <div class="home-action-card__meta"><p class="home-action-card__meta-text">Date TBC</p></div>
-                  <h3 class="home-action-card__title"><a href="events/" class="home-action-card__title-link">Community mobilization briefing</a></h3>
-                  <p class="home-action-card__details">Location: To be confirmed</p>
-                  <div class="home-action-card__footer"><a href="events/" class="home-action-card__link">View events</a></div>
-                </article>
+
+              <div class="home-action-list" data-animate-group="stagger" data-animate-delay="0.12">
+
+                  <article class="home-action-card home-action-card--black">
+                      <div class="home-action-card__meta">
+                        <p class="home-action-card__meta-text">20 APR 2026 • 02:00</p>
+                      </div>
+
+                    <h3 class="home-action-card__title">
+                      <a class="home-action-card__title-link" href="events/social-intifada-launches-official-website.html">Social Intifada Launches Official Website</a>
+                    </h3>
+
+                      <p class="home-action-card__details">Location: TBC</p>
+
+                    <div class="home-action-card__footer">
+                      <a class="home-action-card__link" href="events/social-intifada-launches-official-website.html">View details</a>
+                    </div>
+                  </article>
               </div>
             </div>
-          </div>
-        </section>
-      </div>
-
-      <section class="home-cta home-band" aria-label="Support and contact">
-        <div class="home-shell home-cta__inner">
-          <div class="home-cta__copy">
-            <h2>Support our mission</h2>
-            <p>Join us in advancing digital activism and amplifying voices.</p>
-          </div>
-          <div class="home-cta__actions">
-            <a href="donate/" class="button">Donate now</a>
-            <a href="about-us/" class="button button--secondary">Get in touch</a>
-          </div>
         </div>
       </section>
-    </main>
+    </div>
+
+  <section class="home-cta home-band" aria-label="Support and contact">
+    <div class="home-shell home-cta__inner">
+      <div class="home-cta__copy" data-animate-group="stagger">
+        <h2>Support our mission</h2>
+        <p>Join us in advancing digital activism and amplifying voices.</p>
+      </div>
+
+      <div class="home-cta__actions" data-animate-group="stagger" data-animate-delay="0.12">
+        <a class="home-cta__primary" href="donate.html">Donate now</a>
+        <a class="home-cta__secondary" href="about-us.html">Get in touch</a>
+      </div>
+    </div>
+  </section>
+</main>
 
     <footer class="site-footer">
-      <div class="site-footer__main">
-        <div class="site-footer__brand">
-          <a href="./" class="site-footer__brand-link" aria-label="Social Intifada">
-            <img src="assets/img/black-bg-logo.svg" alt="Social Intifada" class="site-footer__brand-image">
-          </a>
-        </div>
-        <div class="site-footer__divider" aria-hidden="true"></div>
-        <div class="site-footer__mission-wrap">
-          <p class="site-footer__mission">Committed to front-foot digital activism grounded in justice, education, and solidarity with Palestine and Bilad Ash Shaam.</p>
-        </div>
-      </div>
-      <div class="site-footer__bottom">
-        <nav class="site-footer__links" aria-label="Footer">
-          <a href="./" class="site-footer__link">Home</a>
-          <a href="about-us/" class="site-footer__link">About Us</a>
-          <a href="news/" class="site-footer__link">News</a>
-          <a href="events/" class="site-footer__link">Events</a>
-          <a href="campaigns/" class="site-footer__link">Campaigns</a>
-        </nav>
+  <div class="site-footer__main" data-animate="fade-up">
+    <div class="site-footer__brand">
+      <a href="index.html" class="site-footer__brand-link" aria-label="Social Intifada">
+        <img alt="Social Intifada" class="site-footer__brand-image" src="black-bg-logo.svg" />
+      </a>
+    </div>
+
+    <div class="site-footer__divider" aria-hidden="true"></div>
+
+    <div class="site-footer__mission-wrap">
+      <p class="site-footer__mission">Committed to unapologetic, front-foot digital activism grounded in the principles of the Qur’an and Sunnah. We aim to raise awareness, educate, and empower individuals to stand in solidarity with Palestine and Bilad Ash Shaam.</p>
+    </div>
+  </div>
+
+  <div class="site-footer__bottom" data-animate="fade-up" data-animate-delay="0.08">
+    <div class="site-footer__bottom-group site-footer__bottom-group--links">
+      <nav class="site-footer__links" aria-label="Footer">
+          <a class="site-footer__link" href="index.html">Home</a>
+          <a class="site-footer__link" href="about-us.html">About Us</a>
+          <a class="site-footer__link" href="news.html">News</a>
+          <a class="site-footer__link" href="events.html">Events</a>
+          <a class="site-footer__link" href="campaigns.html">Campaigns</a>
+      </nav>
+    </div>
+
+      <div class="site-footer__bottom-group">
         <div class="site-footer__social">
-          <a href="https://www.instagram.com/socialintifada/" class="site-footer__social-link" target="_blank" rel="noopener">Instagram</a>
-        </div>
+            <a class="site-footer__social-link" target="_blank" rel="noopener" aria-label="Instagram" href="https://www.instagram.com/socialintifada/">
+              <span class="site-footer__social-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+  <rect x="3.25" y="3.25" width="17.5" height="17.5" rx="5.25" stroke="currentColor" stroke-width="1.8"/>
+  <circle cx="12" cy="12" r="4.1" stroke="currentColor" stroke-width="1.8"/>
+  <circle cx="17.1" cy="6.9" r="1.1" fill="currentColor"/>
+</svg>
+</span>
+              <span class="site-footer__social-text">Instagram</span>
+</a>        </div>
       </div>
-    </footer>
+
+  </div>
+</footer>
+
   </body>
 </html>
