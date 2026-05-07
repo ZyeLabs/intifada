@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Home | Social Intifada</title>
+    <meta charset="utf-8">
+<title>Home | Social Intifada</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="csrf-param" content="authenticity_token" />
 <meta name="csrf-token" content="MZ7yzXntT1b_n9BWRtW9A_nJLaUi8peGVw3X4aZR9jFhsQsiV7Q-TDzSARuI_Irf4EcptXx_BGLdKV1RLAs6qA" />
@@ -33,13 +34,11 @@
         <span></span>
       </span>
     </button>
-
     <nav class="site-header__nav" aria-label="Main">
         <a class="site-header__nav-link site-header__nav-link--active" aria-current="page" href="index.html">Home</a>
         <a class="site-header__nav-link" href="about-us.html">About Us</a>
-        <a class="site-header__nav-link" href="news.html">News</a>
+        <a class="site-header__nav-link" href="https://x.com/socialintifada" target="_blank" rel="noopener">News</a>
         <a class="site-header__nav-link" href="events.html">Events</a>
-        <a class="site-header__nav-link" href="campaigns.html">Campaigns</a>
     </nav>
 
     <div class="site-header__actions">
@@ -47,6 +46,13 @@
     </div>
   </div>
 
+  <div class="site-header__datebar" aria-label="Current English and Islamic date">
+  <span class="site-header__datebar-label">English</span>
+  <span class="site-header__datebar-value" data-date-gregorian>Thursday, 7 May 2026</span>
+  <span class="site-header__datebar-separator" aria-hidden="true">/</span>
+  <span class="site-header__datebar-label">Islamic</span>
+  <span class="site-header__datebar-value" data-date-hijri>20 Dhu al-Qadah 1447 AH</span>
+</div>
   <div class="site-header__mobile-backdrop" hidden data-mobile-nav-backdrop></div>
 
   <aside
@@ -65,13 +71,11 @@
         <span class="site-header__drawer-close-label">Close</span>
       </button>
     </div>
-
     <nav class="site-header__drawer-nav" aria-label="Mobile main">
         <a class="site-header__drawer-link site-header__drawer-link--active" data-mobile-nav-link="true" aria-current="page" href="index.html">Home</a>
         <a class="site-header__drawer-link" data-mobile-nav-link="true" href="about-us.html">About Us</a>
-        <a class="site-header__drawer-link" data-mobile-nav-link="true" href="news.html">News</a>
+        <a class="site-header__drawer-link" data-mobile-nav-link="true" href="https://x.com/socialintifada" target="_blank" rel="noopener">News</a>
         <a class="site-header__drawer-link" data-mobile-nav-link="true" href="events.html">Events</a>
-        <a class="site-header__drawer-link" data-mobile-nav-link="true" href="campaigns.html">Campaigns</a>
     </nav>
 
     <div class="site-header__drawer-actions">
@@ -105,7 +109,9 @@
               </h1>
                 <p class="lead-story__standfirst" data-animate="fade-up" data-animate-delay="0.2">A South African screening of The Voice of Hind Rajab with Social Intifada as the official South African partner.</p>
               <p class="lead-story__meta" data-animate="fade-up" data-animate-delay="0.28">
-                <span class="lead-story__author">16 MAY 2026 20:00</span>
+                <span class="lead-story__author">Saturday, 16 May 2026</span>
+                <span class="lead-story__date-hijri">29 Dhu al-Qidah 1447 AH</span>
+                <span>20:00 SAST</span>
                 <span class="lead-story__read-time">Nu Metro, The Glen</span>
               </p>
             </article>
@@ -121,10 +127,26 @@
                 <article class="home-latest__item">
                   <p class="home-latest__kicker">Upcoming event</p>
                   <h3 class="home-latest__title">
+                    <a class="home-latest__title-link" href="events/the-voice-of-hind-rajab-joburg-clear-water-mall-11am.html">The Voice of Hind Rajab - Joburg: Nu Metro, Clear Water Mall (11:00)</a>
+                  </h3>
+                    <p class="home-latest__snippet">Location: Nu Metro, Clear Water Mall, Cine 3</p>
+                  <p class="home-latest__time">
+                    <time datetime="2026-05-17T11:00:00+02:00">Sunday, 17 May 2026</time>
+                    <span class="home-latest__date-hijri">30 Dhu al-Qidah 1447 AH</span>
+                    <span>11:00 SAST</span>
+                  </p>
+                </article>
+                <article class="home-latest__item">
+                  <p class="home-latest__kicker">Upcoming event</p>
+                  <h3 class="home-latest__title">
                     <a class="home-latest__title-link" href="events/the-voice-of-hind-rajab-joburg-clear-water-mall.html">The Voice of Hind Rajab - Joburg: Nu Metro, Clear Water Mall</a>
                   </h3>
                     <p class="home-latest__snippet">Location: Nu Metro, Clear Water Mall, Cine 3</p>
-                  <p class="home-latest__time">17 MAY 2026 14:00</p>
+                  <p class="home-latest__time">
+                    <time datetime="2026-05-17T14:00:00+02:00">Sunday, 17 May 2026</time>
+                    <span class="home-latest__date-hijri">30 Dhu al-Qidah 1447 AH</span>
+                    <span>14:00 SAST</span>
+                  </p>
                 </article>
                 <article class="home-latest__item">
                   <p class="home-latest__kicker">Upcoming event</p>
@@ -132,7 +154,11 @@
                     <a class="home-latest__title-link" href="events/the-voice-of-hind-rajab-durban-cornubia.html">The Voice of Hind Rajab - Durban: Nu Metro, Cornubia</a>
                   </h3>
                     <p class="home-latest__snippet">Location: Nu Metro, Cornubia, Cine 2</p>
-                  <p class="home-latest__time">20 MAY 2026 19:30</p>
+                  <p class="home-latest__time">
+                    <time datetime="2026-05-20T19:30:00+02:00">Wednesday, 20 May 2026</time>
+                    <span class="home-latest__date-hijri">3 Dhu al-Hijjah 1447 AH</span>
+                    <span>19:30 SAST</span>
+                  </p>
                 </article>
                 <article class="home-latest__item">
                   <p class="home-latest__kicker">Upcoming event</p>
@@ -140,7 +166,11 @@
                     <a class="home-latest__title-link" href="events/the-voice-of-hind-rajab-cape-town-canal-walk.html">The Voice of Hind Rajab - Cape Town: Nu Metro, Canal Walk</a>
                   </h3>
                     <p class="home-latest__snippet">Location: Nu Metro, Canal Walk, Cine 2</p>
-                  <p class="home-latest__time">23 MAY 2026 20:00</p>
+                  <p class="home-latest__time">
+                    <time datetime="2026-05-23T20:00:00+02:00">Saturday, 23 May 2026</time>
+                    <span class="home-latest__date-hijri">6 Dhu al-Hijjah 1447 AH</span>
+                    <span>20:00 SAST</span>
+                  </p>
                 </article>
                 <article class="home-latest__item">
                   <p class="home-latest__kicker">Upcoming event</p>
@@ -148,7 +178,11 @@
                     <a class="home-latest__title-link" href="events/the-voice-of-hind-rajab-cape-town-islamia-college.html">The Voice of Hind Rajab - Cape Town: Islamia College</a>
                   </h3>
                     <p class="home-latest__snippet">Location: Islamia College</p>
-                  <p class="home-latest__time">24 MAY 2026 14:00</p>
+                  <p class="home-latest__time">
+                    <time datetime="2026-05-24T14:00:00+02:00">Sunday, 24 May 2026</time>
+                    <span class="home-latest__date-hijri">7 Dhu al-Hijjah 1447 AH</span>
+                    <span>14:00 SAST</span>
+                  </p>
                 </article>
             </div>
 
@@ -168,18 +202,8 @@
   </section>
 
     <div class="page page--homepage page--homepage-secondary">
-      <section class="home-action-grid" aria-label="Campaigns and events">
-        <div class="home-action-grid__inner">
-            <div class="home-action-section home-action-section--green">
-              <header class="home-section-title home-section-title--green" data-animate="fade-up">
-                <h2>Active campaigns</h2>
-                <a class="home-section-title__link" href="campaigns.html">See all</a>
-              </header>
-
-              <div class="home-action-list" data-animate-group="stagger" data-animate-delay="0.08">
-                <p class="empty-state">No active campaigns yet.</p>
-              </div>
-            </div>
+      <section class="home-action-grid" aria-label="Upcoming events">
+        <div class="home-action-grid__inner home-action-grid__inner--single">
             <div class="home-action-section home-action-section--black">
               <header class="home-section-title home-section-title--black" data-animate="fade-up">
                 <h2>Upcoming events</h2>
@@ -190,7 +214,7 @@
 
                   <article class="home-action-card home-action-card--black">
                       <div class="home-action-card__meta">
-                        <p class="home-action-card__meta-text">16 MAY 2026 20:00</p>
+                        <p class="home-action-card__meta-text">Saturday, 16 May 2026 <span class="home-action-card__date-hijri">29 Dhu al-Qidah 1447 AH</span><span>20:00 SAST</span></p>
                       </div>
 
                     <h3 class="home-action-card__title">
@@ -206,7 +230,23 @@
 
                   <article class="home-action-card home-action-card--black">
                       <div class="home-action-card__meta">
-                        <p class="home-action-card__meta-text">17 MAY 2026 14:00</p>
+                        <p class="home-action-card__meta-text">Sunday, 17 May 2026 <span class="home-action-card__date-hijri">30 Dhu al-Qidah 1447 AH</span><span>11:00 SAST</span></p>
+                      </div>
+
+                    <h3 class="home-action-card__title">
+                      <a class="home-action-card__title-link" href="events/the-voice-of-hind-rajab-joburg-clear-water-mall-11am.html">The Voice of Hind Rajab - Joburg: Clear Water Mall (11:00)</a>
+                    </h3>
+
+                      <p class="home-action-card__details">Location: Nu Metro, Clear Water Mall, Cine 3</p>
+
+                    <div class="home-action-card__footer">
+                      <a class="home-action-card__link" href="events/the-voice-of-hind-rajab-joburg-clear-water-mall-11am.html">View details</a>
+                    </div>
+                  </article>
+
+                  <article class="home-action-card home-action-card--black">
+                      <div class="home-action-card__meta">
+                        <p class="home-action-card__meta-text">Sunday, 17 May 2026 <span class="home-action-card__date-hijri">30 Dhu al-Qidah 1447 AH</span><span>14:00 SAST</span></p>
                       </div>
 
                     <h3 class="home-action-card__title">
@@ -222,7 +262,7 @@
 
                   <article class="home-action-card home-action-card--black">
                       <div class="home-action-card__meta">
-                        <p class="home-action-card__meta-text">20 MAY 2026 19:30</p>
+                        <p class="home-action-card__meta-text">Wednesday, 20 May 2026 <span class="home-action-card__date-hijri">3 Dhu al-Hijjah 1447 AH</span><span>19:30 SAST</span></p>
                       </div>
 
                     <h3 class="home-action-card__title">
@@ -267,36 +307,52 @@
     <div class="site-footer__divider" aria-hidden="true"></div>
 
     <div class="site-footer__mission-wrap">
-      <p class="site-footer__mission">Committed to unapologetic, front-foot digital activism grounded in the principles of the Qur’an and Sunnah. We aim to raise awareness, educate, and empower individuals to stand in solidarity with Palestine and Bilad Ash Shaam.</p>
+      <p class="site-footer__mission">Committed to unapologetic, front-foot digital activism grounded in the principles of the Quran and Sunnah. We aim to raise awareness, educate, and empower individuals to stand in solidarity with Palestine and Bilad Ash Shaam.</p>
     </div>
   </div>
 
   <div class="site-footer__bottom" data-animate="fade-up" data-animate-delay="0.08">
     <div class="site-footer__bottom-group site-footer__bottom-group--links">
       <nav class="site-footer__links" aria-label="Footer">
-          <a class="site-footer__link" href="index.html">Home</a>
-          <a class="site-footer__link" href="about-us.html">About Us</a>
-          <a class="site-footer__link" href="news.html">News</a>
-          <a class="site-footer__link" href="events.html">Events</a>
-          <a class="site-footer__link" href="campaigns.html">Campaigns</a>
-      </nav>
+    <a class="site-footer__link" href="index.html">Home</a>
+    <a class="site-footer__link" href="about-us.html">About Us</a>
+    <a class="site-footer__link" href="https://x.com/socialintifada" target="_blank" rel="noopener">News</a>
+    <a class="site-footer__link" href="events.html">Events</a>
+    <a class="site-footer__link" href="https://www.islamic-relief.org.za" target="_blank" rel="noopener">Islamic Relief</a>
+</nav>
     </div>
 
       <div class="site-footer__bottom-group">
-        <div class="site-footer__social">
-            <a class="site-footer__social-link" target="_blank" rel="noopener" aria-label="Instagram" href="https://www.instagram.com/socialintifada/">
-              <span class="site-footer__social-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-  <rect x="3.25" y="3.25" width="17.5" height="17.5" rx="5.25" stroke="currentColor" stroke-width="1.8"/>
-  <circle cx="12" cy="12" r="4.1" stroke="currentColor" stroke-width="1.8"/>
-  <circle cx="17.1" cy="6.9" r="1.1" fill="currentColor"/>
-</svg>
-</span>
-              <span class="site-footer__social-text">Instagram</span>
-</a>        </div>
+                <div class="site-footer__social">
+            <a class="site-footer__social-link" target="_blank" rel="noopener" aria-label="YouTube" href="https://youtube.com/@socialintifada?si=H8umKoXwoEX-BaZE"><span class="site-footer__social-text">YouTube</span></a>
+            <a class="site-footer__social-link" target="_blank" rel="noopener" aria-label="TikTok" href="https://www.tiktok.com/@socialintifada?_r=1&_t=ZS-95l0O2SuYBY"><span class="site-footer__social-text">TikTok</span></a>
+            <a class="site-footer__social-link" target="_blank" rel="noopener" aria-label="X" href="https://x.com/socialintifada"><span class="site-footer__social-text">X</span></a>
+            <a class="site-footer__social-link" target="_blank" rel="noopener" aria-label="Upscrolled" href="https://share.upscrolled.com/en/user/f54deeb8-70ba-486d-8d9f-47eb891e024a/"><span class="site-footer__social-text">Upscrolled</span></a>
+        </div>
       </div>
 
   </div>
 </footer>
+<script>
+  (function () {
+    var gregorianNodes = document.querySelectorAll('[data-date-gregorian]');
+    var hijriNodes = document.querySelectorAll('[data-date-hijri]');
+    if ((!gregorianNodes.length && !hijriNodes.length) || !window.Intl) return;
 
+    var now = new Date();
+    var setText = function (nodes, text) {
+      Array.prototype.forEach.call(nodes, function (node) { node.textContent = text; });
+    };
+
+    try {
+      setText(gregorianNodes, new Intl.DateTimeFormat('en-ZA', {
+        weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'
+      }).format(now));
+      setText(hijriNodes, new Intl.DateTimeFormat('en-u-ca-islamic-umalqura', {
+        day: 'numeric', month: 'long', year: 'numeric'
+      }).format(now));
+    } catch (error) {}
+  })();
+</script>
   </body>
 </html>

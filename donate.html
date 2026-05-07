@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Donate | Social Intifada</title>
+    <meta charset="utf-8">
+<title>Donate | Social Intifada</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="csrf-param" content="authenticity_token" />
 <meta name="csrf-token" content="gJyKj4gxqkz7ZPylXHBa4BryIRjg2RCn5Z1Eo2-o1ZfQs3NgpmjbVjgpLeiSWW08A3wlCL5Ug0Nvuc4T5fIZDg" />
@@ -33,13 +34,11 @@
         <span></span>
       </span>
     </button>
-
     <nav class="site-header__nav" aria-label="Main">
         <a class="site-header__nav-link" href="index.html">Home</a>
         <a class="site-header__nav-link" href="about-us.html">About Us</a>
-        <a class="site-header__nav-link" href="news.html">News</a>
+        <a class="site-header__nav-link" href="https://x.com/socialintifada" target="_blank" rel="noopener">News</a>
         <a class="site-header__nav-link" href="events.html">Events</a>
-        <a class="site-header__nav-link" href="campaigns.html">Campaigns</a>
     </nav>
 
     <div class="site-header__actions">
@@ -47,6 +46,13 @@
     </div>
   </div>
 
+  <div class="site-header__datebar" aria-label="Current English and Islamic date">
+  <span class="site-header__datebar-label">English</span>
+  <span class="site-header__datebar-value" data-date-gregorian>Thursday, 7 May 2026</span>
+  <span class="site-header__datebar-separator" aria-hidden="true">/</span>
+  <span class="site-header__datebar-label">Islamic</span>
+  <span class="site-header__datebar-value" data-date-hijri>20 Dhu al-Qadah 1447 AH</span>
+</div>
   <div class="site-header__mobile-backdrop" hidden data-mobile-nav-backdrop></div>
 
   <aside
@@ -65,13 +71,11 @@
         <span class="site-header__drawer-close-label">Close</span>
       </button>
     </div>
-
     <nav class="site-header__drawer-nav" aria-label="Mobile main">
         <a class="site-header__drawer-link" data-mobile-nav-link="true" href="index.html">Home</a>
         <a class="site-header__drawer-link" data-mobile-nav-link="true" href="about-us.html">About Us</a>
-        <a class="site-header__drawer-link" data-mobile-nav-link="true" href="news.html">News</a>
+        <a class="site-header__drawer-link" data-mobile-nav-link="true" href="https://x.com/socialintifada" target="_blank" rel="noopener">News</a>
         <a class="site-header__drawer-link" data-mobile-nav-link="true" href="events.html">Events</a>
-        <a class="site-header__drawer-link" data-mobile-nav-link="true" href="campaigns.html">Campaigns</a>
     </nav>
 
     <div class="site-header__drawer-actions">
@@ -82,12 +86,12 @@
 
     
 <main class="page page--donate">
-  <section class="donate-hero" style="min-height: 70vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 6rem 1.5rem;">
-    <div style="max-width: 720px; margin: 0 auto;">
-      <h1 data-animate="word-stagger">Support Us</h1>
-
-      <p data-animate="fade-up" data-animate-delay="0.12">
-        Your support helps us continue our work and keep our platform moving forward.
+  <section class="donate-hero">
+    <div class="donate-hero__copy">
+      <p class="donate-hero__kicker" data-animate="fade-up">Sustain the work</p>
+      <h1 data-animate="word-stagger">Support Social Intifada</h1>
+      <p class="donate-hero__lead" data-animate="fade-up" data-animate-delay="0.12">
+        Your support helps keep our platform moving, our reporting visible, and our digital activism independent.
       </p>
 
       <div class="donate-hero__actions" data-animate-group="stagger" data-animate-delay="0.18">
@@ -100,9 +104,60 @@
         </a>
       </div>
     </div>
-  </section>
-</main>
 
+    <aside class="donate-hero__panel" data-animate="fade-left" data-animate-delay="0.18" aria-label="Support focus">
+      <p class="donate-hero__panel-label">Your support funds</p>
+      <ul>
+        <li>Digital campaigns that keep Palestine visible.</li>
+        <li>Research, reporting, and educational content.</li>
+        <li>Tools that help the community organise and respond.</li>
+      </ul>
+    </aside>
+  </section>
+
+  <section class="donate-impact" aria-label="How support helps">
+    <header class="donate-impact__header" data-animate="fade-up">
+      <p class="donate-impact__kicker">Where it goes</p>
+      <h2>Built for sustained pressure</h2>
+    </header>
+
+    <div class="donate-impact__list" data-animate-group="stagger" data-animate-delay="0.08">
+      <article class="donate-impact__card">
+        <span class="donate-impact__number">01</span>
+        <h3>Amplify</h3>
+        <p>Support helps us publish, share, and keep urgent stories in front of wider audiences.</p>
+      </article>
+
+      <article class="donate-impact__card">
+        <span class="donate-impact__number">02</span>
+        <h3>Educate</h3>
+        <p>We create accessible material that helps people understand, explain, and challenge oppression.</p>
+      </article>
+
+      <article class="donate-impact__card">
+        <span class="donate-impact__number">03</span>
+        <h3>Mobilise</h3>
+        <p>Funding keeps our digital infrastructure ready for campaigns, events, and rapid public action.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="donate-final" aria-label="Donate now">
+    <div class="donate-final__copy" data-animate="fade-up">
+      <h2>Contribute to the platform.</h2>
+      <p>Every contribution helps us continue this work with focus and consistency.</p>
+    </div>
+
+    <a
+      class="button button--donate button--large donate-final__button"
+      href="https://pay.ikhokha.com/social-intifada/donation/donationonwebsite"
+      target="_blank"
+      rel="noopener noreferrer"
+      data-animate="fade-up"
+      data-animate-delay="0.1">
+      Donate Now
+    </a>
+  </section>
 </main>
 
     <footer class="site-footer">
@@ -116,36 +171,52 @@
     <div class="site-footer__divider" aria-hidden="true"></div>
 
     <div class="site-footer__mission-wrap">
-      <p class="site-footer__mission">Committed to unapologetic, front-foot digital activism grounded in the principles of the Qur’an and Sunnah. We aim to raise awareness, educate, and empower individuals to stand in solidarity with Palestine and Bilad Ash Shaam.</p>
+      <p class="site-footer__mission">Committed to unapologetic, front-foot digital activism grounded in the principles of the Quran and Sunnah. We aim to raise awareness, educate, and empower individuals to stand in solidarity with Palestine and Bilad Ash Shaam.</p>
     </div>
   </div>
 
   <div class="site-footer__bottom" data-animate="fade-up" data-animate-delay="0.08">
     <div class="site-footer__bottom-group site-footer__bottom-group--links">
       <nav class="site-footer__links" aria-label="Footer">
-          <a class="site-footer__link" href="index.html">Home</a>
-          <a class="site-footer__link" href="about-us.html">About Us</a>
-          <a class="site-footer__link" href="news.html">News</a>
-          <a class="site-footer__link" href="events.html">Events</a>
-          <a class="site-footer__link" href="campaigns.html">Campaigns</a>
-      </nav>
+    <a class="site-footer__link" href="index.html">Home</a>
+    <a class="site-footer__link" href="about-us.html">About Us</a>
+    <a class="site-footer__link" href="https://x.com/socialintifada" target="_blank" rel="noopener">News</a>
+    <a class="site-footer__link" href="events.html">Events</a>
+    <a class="site-footer__link" href="https://www.islamic-relief.org.za" target="_blank" rel="noopener">Islamic Relief</a>
+</nav>
     </div>
 
       <div class="site-footer__bottom-group">
-        <div class="site-footer__social">
-            <a class="site-footer__social-link" target="_blank" rel="noopener" aria-label="Instagram" href="https://www.instagram.com/socialintifada/">
-              <span class="site-footer__social-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-  <rect x="3.25" y="3.25" width="17.5" height="17.5" rx="5.25" stroke="currentColor" stroke-width="1.8"/>
-  <circle cx="12" cy="12" r="4.1" stroke="currentColor" stroke-width="1.8"/>
-  <circle cx="17.1" cy="6.9" r="1.1" fill="currentColor"/>
-</svg>
-</span>
-              <span class="site-footer__social-text">Instagram</span>
-</a>        </div>
+                <div class="site-footer__social">
+            <a class="site-footer__social-link" target="_blank" rel="noopener" aria-label="YouTube" href="https://youtube.com/@socialintifada?si=H8umKoXwoEX-BaZE"><span class="site-footer__social-text">YouTube</span></a>
+            <a class="site-footer__social-link" target="_blank" rel="noopener" aria-label="TikTok" href="https://www.tiktok.com/@socialintifada?_r=1&_t=ZS-95l0O2SuYBY"><span class="site-footer__social-text">TikTok</span></a>
+            <a class="site-footer__social-link" target="_blank" rel="noopener" aria-label="X" href="https://x.com/socialintifada"><span class="site-footer__social-text">X</span></a>
+            <a class="site-footer__social-link" target="_blank" rel="noopener" aria-label="Upscrolled" href="https://share.upscrolled.com/en/user/f54deeb8-70ba-486d-8d9f-47eb891e024a/"><span class="site-footer__social-text">Upscrolled</span></a>
+        </div>
       </div>
 
   </div>
 </footer>
+<script>
+  (function () {
+    var gregorianNodes = document.querySelectorAll('[data-date-gregorian]');
+    var hijriNodes = document.querySelectorAll('[data-date-hijri]');
+    if ((!gregorianNodes.length && !hijriNodes.length) || !window.Intl) return;
 
+    var now = new Date();
+    var setText = function (nodes, text) {
+      Array.prototype.forEach.call(nodes, function (node) { node.textContent = text; });
+    };
+
+    try {
+      setText(gregorianNodes, new Intl.DateTimeFormat('en-ZA', {
+        weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'
+      }).format(now));
+      setText(hijriNodes, new Intl.DateTimeFormat('en-u-ca-islamic-umalqura', {
+        day: 'numeric', month: 'long', year: 'numeric'
+      }).format(now));
+    } catch (error) {}
+  })();
+</script>
   </body>
 </html>
