@@ -635,6 +635,11 @@ blockquote {
   display: block;
 }
 
+.catalogue-card__detail--stacked time {
+  color: var(--si-red);
+  font-weight: 700;
+}
+
 .catalogue-card__hijri {
   color: #57534e;
 }
@@ -1669,13 +1674,19 @@ blockquote {
   .site-footer__bottom {
     align-items: stretch;
     flex-direction: column;
-    gap: 18px;
+    gap: 14px;
   }
   /* line 229, app/assets/stylesheets/layouts/_footer.scss */
   .site-footer__links,
 .site-footer__social {
-    display: grid;
-    gap: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 18px;
+    justify-content: flex-start;
+  }
+  .site-footer__bottom-group + .site-footer__bottom-group {
+    border-top: 1px solid rgba(255, 255, 255, 0.16);
+    padding-top: 14px;
   }
   /* line 235, app/assets/stylesheets/layouts/_footer.scss */
   .site-footer__link,
@@ -1806,6 +1817,12 @@ blockquote {
   display: inline;
 }
 
+.lead-story__author,
+.home-latest__time time {
+  color: var(--si-red);
+  font-weight: 700;
+}
+
 /* line 106, app/assets/stylesheets/pages/_home.scss */
 .lead-story__separator {
   display: inline;
@@ -1908,8 +1925,8 @@ blockquote {
   display: grid;
   gap: 3px;
   font-family: var(--si-font-body);
-  font-size: 10px;
-  line-height: 15px;
+  font-size: 13px;
+  line-height: 1.5;
   margin: 0;
   text-transform: uppercase;
 }
@@ -1917,6 +1934,31 @@ blockquote {
 .home-latest__date-hijri,
 .lead-story__date-hijri {
   color: #57534e;
+  font-weight: 400;
+}
+
+.home-latest__meta-uniform {
+  color: #78716c;
+  font-family: var(--si-font-body);
+  font-size: 13px;
+  line-height: 1.5;
+  text-transform: none;
+}
+
+.home-latest__meta-uniform time,
+.home-latest__meta-uniform span {
+  color: inherit;
+  font: inherit;
+}
+
+.home-latest__meta-uniform .home-latest__date-hijri {
+  color: #57534e;
+  font-weight: 400;
+}
+
+.home-latest__meta-uniform .home-latest__meta-strong {
+  color: var(--si-ink);
+  font-weight: 700;
 }
 
 /* line 199, app/assets/stylesheets/pages/_home.scss */
@@ -2129,7 +2171,7 @@ blockquote {
   color: var(--home-action-accent);
   font-family: var(--si-font-body);
   font-size: 11px;
-  font-weight: 700;
+  font-weight: 400;
   letter-spacing: 0.08em;
   line-height: 1.4;
   margin: 0;
@@ -2140,8 +2182,14 @@ blockquote {
   display: block;
 }
 
+.home-action-card__date-primary {
+  color: var(--home-action-accent);
+  font-weight: 700;
+}
+
 .home-action-card__date-hijri {
   color: var(--home-action-copy);
+  font-weight: 400;
 }
 
 /* line 389, app/assets/stylesheets/pages/_home.scss */
@@ -2386,6 +2434,10 @@ blockquote {
 }
 
 @media (max-width: 760px) {
+  .breaking-strip {
+    display: none;
+  }
+
   /* line 618, app/assets/stylesheets/pages/_home.scss */
   .homepage {
     gap: 32px;
@@ -4290,10 +4342,16 @@ blockquote {
   display: block;
   font-family: var(--si-font-body);
   font-size: 11px;
-  font-weight: 700;
+  font-weight: 400;
   letter-spacing: 1px;
   line-height: 16px;
   text-transform: uppercase;
+}
+
+.event-template__meta-secondary {
+  color: var(--si-muted);
+  font-size: 11px;
+  font-weight: 400;
 }
 
 /* line 96, app/assets/stylesheets/pages/_event_template.scss */
@@ -4407,6 +4465,15 @@ blockquote {
   color: var(--si-muted);
   display: block;
   font-size: 13px;
+  font-weight: 400;
+  line-height: 20px;
+  text-transform: uppercase;
+}
+
+.event-template__aside-date-secondary {
+  color: var(--si-muted);
+  font-size: 13px;
+  font-weight: 400;
   line-height: 20px;
   text-transform: uppercase;
 }
