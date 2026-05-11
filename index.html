@@ -100,7 +100,7 @@
           <div class="home-hero__lead">
             <article class="lead-story">
               <div class="lead-story__media-wrap lead-story__media-wrap--poster">
-                <a class="lead-story__image-link" data-animate="clip-reveal" href="events/the-voice-of-hind-rajab-joburg-the-glen.html"><img alt="The Voice of Hind Rajab - Joburg: Nu Metro, The Glen" class="lead-story__image lead-story__image--poster" decoding="async" src="sc.png" /></a>
+                <a class="lead-story__image-link" data-animate="clip-reveal" href="events/the-voice-of-hind-rajab-joburg-the-glen.html"><img alt="The Voice of Hind Rajab - Joburg: Nu Metro, The Glen" class="lead-story__image lead-story__image--poster" decoding="async" src="assets/events/The Glen.png" /></a>
                 <span class="lead-story__badge" data-animate="scale-in" data-animate-delay="0.12">FEATURED</span>
               </div>
 
@@ -348,9 +348,20 @@
       setText(gregorianNodes, new Intl.DateTimeFormat('en-ZA', {
         weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'
       }).format(now));
-      setText(hijriNodes, new Intl.DateTimeFormat('en-u-ca-islamic-umalqura', {
-        day: 'numeric', month: 'long', year: 'numeric'
-      }).format(now));
+      var hijriFormatter = new Intl.DateTimeFormat('en-u-ca-islamic-umalqura', {
+        day: 'numeric', month: 'long', year: 'numeric', era: 'short'
+      });
+      var hijriText;
+      if (typeof hijriFormatter.formatToParts === 'function') {
+        hijriText = hijriFormatter.formatToParts(now).filter(function (part) {
+          return part.type !== 'era';
+        }).map(function (part) {
+          return part.value;
+        }).join('').replace(/\s+,/g, ',').trim() + ' AH';
+      } else {
+        hijriText = hijriFormatter.format(now).replace(/\s+(?:AH|A\.H\.|BC|B\.C\.|BCE|CE)$/i, '').trim() + ' AH';
+      }
+      setText(hijriNodes, hijriText);
     } catch (error) {}
   })();
 </script>

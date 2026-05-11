@@ -76,7 +76,7 @@
     </header>
 
     <figure class="event-template__hero event-template__hero--poster" data-mobile-sticky-target data-animate="clip-reveal" data-parallax="soft">
-      <img alt="The Voice of Hind Rajab film screening" decoding="async" src="../sc.png" />
+      <img alt="The Voice of Hind Rajab film screening" decoding="async" src="../assets/events/Clearwater 2pm.png" />
     </figure>
 
     <div class="event-template__content-grid">
@@ -84,13 +84,13 @@
         <h3>Key information</h3>
         <dl>
           <div><dt>Status</dt><dd>Upcoming</dd></div>
-          <div><dt>Registration</dt><dd>Tickets on sale</dd></div>
+          <div><dt>Registration</dt><dd>Sold out</dd></div>
           <div><dt>Date</dt><dd>Sunday, 17 May 2026<span>30 Dhu al-Qidah 1447 AH</span></dd></div>
           <div><dt>Location</dt><dd>Nu Metro, Clear Water Mall, Cine 4</dd></div>
           <div><dt>Time:</dt><dd>14:00</dd></div>
         </dl>
-        <a class="event-template__cta" target="_blank" rel="noopener" href="https://qkt.io/LFSiXF">Book via Quicket</a>
-        <p class="event-template__aside-note">Tickets on sale now.</p>
+        <span class="event-template__cta">Sold out</span>
+        <p class="event-template__aside-note">This screening is sold out.</p>
       </aside>
 
       <section class="event-template__about">
@@ -100,7 +100,7 @@
           <p>Receiving a 23-minute standing ovation at its world premiere in Venice, The Voice of Hind Rajab received an Academy Award nomination for Best International Feature Film, with nominations at the Golden Globes and the BAFTAs.</p>
           <p>Social Intifada is honoured to serve as the official South African partner for The Voice of Hind Rajab Film.</p>
           <p>Islamic Relief is a national charity partner. Website: <a target="_blank" rel="noopener" href="https://islamic-relief.org.za/">islamic-relief.org.za</a>.</p>
-          <p>Tickets are on sale now via Quicket. Follow Social Intifada on X for updates: <a target="_blank" rel="noopener" href="https://x.com/socialintifada">x.com/socialintifada</a>.</p>
+          <p>This screening is sold out. Follow Social Intifada on X for updates: <a target="_blank" rel="noopener" href="https://x.com/socialintifada">x.com/socialintifada</a>.</p>
         </div>
       </section>
     </div>
@@ -154,9 +154,20 @@
       setText(gregorianNodes, new Intl.DateTimeFormat('en-ZA', {
         weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'
       }).format(now));
-      setText(hijriNodes, new Intl.DateTimeFormat('en-u-ca-islamic-umalqura', {
-        day: 'numeric', month: 'long', year: 'numeric'
-      }).format(now));
+      var hijriFormatter = new Intl.DateTimeFormat('en-u-ca-islamic-umalqura', {
+        day: 'numeric', month: 'long', year: 'numeric', era: 'short'
+      });
+      var hijriText;
+      if (typeof hijriFormatter.formatToParts === 'function') {
+        hijriText = hijriFormatter.formatToParts(now).filter(function (part) {
+          return part.type !== 'era';
+        }).map(function (part) {
+          return part.value;
+        }).join('').replace(/\s+,/g, ',').trim() + ' AH';
+      } else {
+        hijriText = hijriFormatter.format(now).replace(/\s+(?:AH|A\.H\.|BC|B\.C\.|BCE|CE)$/i, '').trim() + ' AH';
+      }
+      setText(hijriNodes, hijriText);
     } catch (error) {}
   })();
 </script>

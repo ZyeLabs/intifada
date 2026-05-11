@@ -147,9 +147,20 @@
       setText(gregorianNodes, new Intl.DateTimeFormat('en-ZA', {
         weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'
       }).format(now));
-      setText(hijriNodes, new Intl.DateTimeFormat('en-u-ca-islamic-umalqura', {
-        day: 'numeric', month: 'long', year: 'numeric'
-      }).format(now));
+      var hijriFormatter = new Intl.DateTimeFormat('en-u-ca-islamic-umalqura', {
+        day: 'numeric', month: 'long', year: 'numeric', era: 'short'
+      });
+      var hijriText;
+      if (typeof hijriFormatter.formatToParts === 'function') {
+        hijriText = hijriFormatter.formatToParts(now).filter(function (part) {
+          return part.type !== 'era';
+        }).map(function (part) {
+          return part.value;
+        }).join('').replace(/\s+,/g, ',').trim() + ' AH';
+      } else {
+        hijriText = hijriFormatter.format(now).replace(/\s+(?:AH|A\.H\.|BC|B\.C\.|BCE|CE)$/i, '').trim() + ' AH';
+      }
+      setText(hijriNodes, hijriText);
     } catch (error) {}
   })();
 </script>
