@@ -1,0 +1,18 @@
+---
+pagination:
+  data: events
+  size: 1
+  alias: event
+permalink: "/events/{{ event.slug }}.html"
+layout: layouts/event.njk
+eleventyComputed:
+  title: "{{ event.title }} | {{ site.name }}"
+  description: "{{ event.summary or event.title }}"
+  ogTitle: "{{ event.title }}"
+  ogType: "article"
+  ogImage: "{{ event.poster }}-1355.webp"
+---
+{#
+  One page per entry in _data/events.json. Markup is in layouts/event.njk.
+  → WordPress: drop this. The template hierarchy does it.
+#}

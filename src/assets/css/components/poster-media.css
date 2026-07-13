@@ -1,0 +1,56 @@
+/*
+ * Poster sizing.
+ *
+ * HERITAGE: this block had NO source comment in the compiled CSS — it was
+ * hand-edited directly into the build output rather than into the SCSS, so a
+ * recompile would have silently destroyed it. It is the only thing constraining
+ * how large event posters render (they are 1355x2000 files shown in a 677px
+ * slot), so it is preserved here deliberately.
+ */
+
+.catalogue-card__media--poster {
+  aspect-ratio: 677 / 1000;
+  background: #000;
+  object-fit: contain;
+}
+
+.catalogue-card:hover .catalogue-card__media--poster {
+  transform: none;
+}
+
+.lead-story__image--poster {
+  aspect-ratio: 677 / 1000;
+  background: #000;
+  height: auto;
+  margin: 0 auto;
+  max-height: min(1000px, 78vh);
+  max-width: 100%;
+  object-fit: contain;
+  width: auto;
+}
+
+.lead-story__media-wrap--poster {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 677px;
+}
+
+.event-template__hero--poster {
+  background: #000;
+  display: grid;
+  justify-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 677px;
+  overflow: visible;
+}
+
+.event-template__hero--poster img {
+  aspect-ratio: 677 / 1000;
+  height: auto;
+  max-height: 1000px;
+  max-width: 100%;
+  object-fit: contain;
+  transform: none !important;
+  width: 100%;
+}

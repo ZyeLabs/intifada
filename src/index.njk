@@ -1,0 +1,147 @@
+---
+title: "Home | Social Intifada"
+layout: layouts/base.njk
+permalink: "/index.html"
+navKey: "home"
+description: "Screenings, events and campaigns from Social Intifada — unapologetic, front-foot digital activism in solidarity with Palestine and Bilad Ash Shaam."
+---
+{#
+  → WordPress: front-page.php
+
+  Four surfaces off the same data:
+    1. breaking strip  — featured event
+    2. lead story      — the same featured event
+    3. "Latest" list   — next 4 upcoming
+    4. "Upcoming" grid — next 4 upcoming
+
+  (3) and (4) run the same query, so they show the same four events. Content
+  decision — HANDOFF §7.
+#}
+{% import "partials/poster.njk" as media %}
+{% set featuredEvent = events | featured %}
+{% set upcomingEvents = events | upcoming %}
+
+<main class="homepage">
+
+  {%- if featuredEvent %}
+    <section class="breaking-strip home-band" aria-label="Upcoming event">
+      <div class="home-shell">
+        <p class="breaking-strip__content" data-animate="fade-up" data-animate-origin="top">
+          <span class="breaking-strip__label" data-animate="scale-in" data-animate-delay="0.14">Upcoming</span>
+          <a class="breaking-strip__link" href="{{ root }}{{ featuredEvent.slug | eventUrl }}">{{ featuredEvent.title }}</a>
+        </p>
+      </div>
+    </section>
+
+    <div class="page page--homepage">
+      <section class="home-hero " aria-label="Lead story and Latest ">
+          <div class="home-hero__lead">
+            <article class="lead-story">
+              <div class="lead-story__media-wrap lead-story__media-wrap--poster">
+                <a class="lead-story__image-link" data-animate="clip-reveal" href="{{ root }}{{ featuredEvent.slug | eventUrl }}">{{ media.poster(featuredEvent, root, "lead-story__image lead-story__image--poster", "(max-width: 760px) 100vw, 677px", false) }}</a>
+                {%- if featuredEvent.badge %}
+                <span class="lead-story__badge" data-animate="scale-in" data-animate-delay="0.12">{{ featuredEvent.badge }}</span>
+                {%- endif %}
+              </div>
+
+              <h1 class="lead-story__title">
+                <a class="lead-story__title-link" data-animate="word-stagger" data-animate-delay="0.08" href="{{ root }}{{ featuredEvent.slug | eventUrl }}">{{ featuredEvent.title }}</a>
+              </h1>
+                {%- if featuredEvent.summary %}
+                <p class="lead-story__standfirst" data-animate="fade-up" data-animate-delay="0.2">{{ featuredEvent.summary }}</p>
+                {%- endif %}
+              <p class="lead-story__meta" data-animate="fade-up" data-animate-delay="0.28">
+                <span class="lead-story__author">{{ featuredEvent.startsAt | eventDate }}</span>
+                <span class="lead-story__date-hijri">{{ featuredEvent.dateHijri }}</span>
+                <span>Time: {{ featuredEvent.startsAt | eventTime }}</span>
+                <span class="lead-story__read-time">{{ featuredEvent.location }}</span>
+              </p>
+            </article>
+          </div>
+
+          <aside class="home-hero__latest" aria-label="Latest ">
+            <header class="home-latest__header" data-animate="fade-left" data-animate-delay="0.18">
+              <h2>Latest </h2>
+              <a class="home-latest__header-link" href="{{ root }}events.html">View all</a>
+            </header>
+
+            <div class="home-latest__list" data-animate-group="stagger" data-animate-delay="0.24">
+                {%- for event in upcomingEvents | limit(4) %}
+                <article class="home-latest__item">
+                  <p class="home-latest__kicker">Upcoming event</p>
+                  <h3 class="home-latest__title">
+                    <a class="home-latest__title-link" href="{{ root }}{{ event.slug | eventUrl }}">{{ event.title }}</a>
+                  </h3>
+                    <p class="home-latest__snippet home-latest__meta-uniform"><span class="home-latest__meta-strong">Location</span>: {{ event.location }}</p>
+                  <p class="home-latest__time home-latest__meta-uniform">
+                    <time datetime="{{ event.startsAt }}">{{ event.startsAt | eventWeekday }}, <span class="home-latest__meta-strong">{{ event.startsAt | eventDayMonthYear }}</span></time>
+                    <span class="home-latest__date-hijri">{{ event.dateHijri }}</span>
+                    <span><span class="home-latest__meta-strong">Time</span>: {{ event.startsAt | eventTime }}</span>
+                  </p>
+                </article>
+                {%- endfor %}
+            </div>
+
+            <a class="home-latest__button" href="{{ root }}events.html">View all events</a>
+          </aside>
+      </section>
+    </div>
+  {%- endif %}
+
+  <section class="home-mission home-band" aria-label="Our mission">
+    <div class="home-shell">
+      <div class="home-mission__inner">
+          <h2 class="home-mission__heading" data-animate="fade-up">Our mission</h2>
+          <p class="home-mission__copy" data-animate="fade-up" data-animate-delay="0.12">Social Intifada is committed to unapologetic, front-foot digital activism. We do not negotiate with censorship.</p>
+          <span class="home-mission__accent" aria-hidden="true" data-animate="line-grow" data-animate-delay="0.28"></span>
+      </div>
+    </div>
+  </section>
+
+    <div class="page page--homepage page--homepage-secondary">
+      <section class="home-action-grid" aria-label="Upcoming events">
+        <div class="home-action-grid__inner home-action-grid__inner--single">
+            <div class="home-action-section home-action-section--black">
+              <header class="home-section-title home-section-title--black" data-animate="fade-up">
+                <h2>Upcoming events</h2>
+                <a class="home-section-title__link" href="{{ root }}events.html">See all</a>
+              </header>
+
+              <div class="home-action-list" data-animate-group="stagger" data-animate-delay="0.12">
+                {%- for event in upcomingEvents | limit(4) %}
+                  <article class="home-action-card home-action-card--black">
+                      <div class="home-action-card__meta">
+                        <p class="home-action-card__meta-text"><span class="home-action-card__date-primary">{{ event.startsAt | eventDate }}</span><span class="home-action-card__date-hijri">{{ event.dateHijri }}</span><span>Time: {{ event.startsAt | eventTime }}</span></p>
+                      </div>
+
+                    <h3 class="home-action-card__title">
+                      <a class="home-action-card__title-link" href="{{ root }}{{ event.slug | eventUrl }}">{{ event.title }}</a>
+                    </h3>
+
+                      <p class="home-action-card__details">{{ event.location | supporting }}</p>
+
+                    <div class="home-action-card__footer">
+                      <a class="home-action-card__link" href="{{ root }}{{ event.slug | eventUrl }}">View details</a>
+                    </div>
+                  </article>
+                {%- endfor %}
+              </div>
+            </div>
+        </div>
+      </section>
+    </div>
+
+  <section class="home-cta home-band" aria-label="Support and contact">
+    <div class="home-shell home-cta__inner">
+      <div class="home-cta__copy" data-animate-group="stagger">
+        <h2>Support our mission</h2>
+        <p>Join us in advancing digital activism and amplifying voices.</p>
+      </div>
+
+      <div class="home-cta__actions" data-animate-group="stagger" data-animate-delay="0.12">
+        <a class="home-cta__primary" href="{{ root }}donate.html">Donate now</a>
+        <a class="home-cta__secondary" href="{{ root }}about-us.html">Get in touch</a>
+      </div>
+    </div>
+  </section>
+</main>

@@ -1,14 +1,10 @@
 .DS_Store
 .env
-.codex
-.bundle/
-.ruby-lsp/
 
-# Local editor and preview artifacts
+# Editor
 .idea/
 .vscode/
 *.log
 
-# Package folders if someone uses local tooling later
 node_modules/
-vendor/
+_site/

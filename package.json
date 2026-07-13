@@ -1,0 +1,19 @@
+{
+  "name": "social-intifada-handoff",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Social Intifada template kit. See HANDOFF.md.",
+  "type": "module",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy && postcss src/assets/css/site.css -o _site/assets/css/site.css"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.6",
+    "@fullhuman/postcss-purgecss": "^8.0.0",
+    "cssnano": "^7.1.9",
+    "postcss": "^8.5.19",
+    "postcss-cli": "^11.0.1",
+    "postcss-import": "^16.1.1"
+  }
+}

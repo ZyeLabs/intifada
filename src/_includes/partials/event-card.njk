@@ -1,0 +1,47 @@
+{#
+  → WordPress: content-event.php (the events loop body).
+
+  Fields: slug · title · poster · posterAlt · startsAt · dateHijri · summary ·
+  location. Everything date-shaped is derived from `startsAt`.
+
+  The CSS has a `catalogue-card--past` modifier this never emits — HANDOFF §7.
+#}
+{% import "partials/poster.njk" as media %}
+{% macro card(event, root, eyebrow) %}
+<article class="catalogue-card">
+  <a href="{{ root }}{{ event.slug | eventUrl }}" class="catalogue-card__media-link" aria-label="{{ event.title }}">
+    {{ media.poster(event, root, "catalogue-card__media catalogue-card__media--poster", "(max-width: 760px) 100vw, 396px", true) }}
+  </a>
+
+  <div class="catalogue-card__body">
+    <div class="catalogue-card__top">
+      <div class="catalogue-card__stamp">
+        <span class="catalogue-card__stamp-value">{{ event.startsAt | stampDay }}</span>
+        <span class="catalogue-card__stamp-label">{{ event.startsAt | stampMonth }}</span>
+      </div>
+
+      <div class="catalogue-card__meta-block">
+        {%- if eyebrow %}
+        <p class="catalogue-card__eyebrow">{{ eyebrow }}</p>
+        {%- endif %}
+        <p class="catalogue-card__detail catalogue-card__detail--stacked">
+          <time{% if event.startsAt %} datetime="{{ event.startsAt }}"{% endif %}>{{ event.startsAt | eventDate }}</time>
+          <span class="catalogue-card__hijri">{{ event.dateHijri or "TBC" }}</span>
+          <span>Time: {{ event.startsAt | eventTime }}</span>
+        </p>
+      </div>
+    </div>
+
+    <h3 class="catalogue-card__title">
+      <a class="catalogue-card__title-link" href="{{ root }}{{ event.slug | eventUrl }}">{{ event.title }}</a>
+    </h3>
+
+    <p class="catalogue-card__summary">{{ event.summary or "Event details will be published soon." }}</p>
+
+    <div class="catalogue-card__footer">
+      <p class="catalogue-card__supporting">{{ event.location | supporting }}</p>
+      <a class="catalogue-card__button" href="{{ root }}{{ event.slug | eventUrl }}">View details</a>
+    </div>
+  </div>
+</article>
+{% endmacro %}

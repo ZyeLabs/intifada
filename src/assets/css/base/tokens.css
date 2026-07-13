@@ -1,0 +1,41 @@
+/*
+ * Brand tokens. → WordPress: build theme.json from this.
+ * Listed with their values in HANDOFF.md, plus the 17 colours that still have
+ * no token.
+ */
+
+:root {
+  --si-bg: #fbf9f9;
+  --si-bg-soft: #f5f3f3;
+  --si-bg-paper: #ffffff;
+  --si-ink: #1b1c1c;
+  --si-copy: #5c5c5c;
+  --si-muted: #a8a29e;
+  --si-red: #bc0100;
+  --si-red-bright: #dc2626;
+  --si-green: #246b40;
+  --si-line: #ebbbb4;
+  --si-border: #d9d9d9;
+  --si-dark: #1b1c1c;
+  --si-dark-line: #292524;
+  --si-shell: 1253px;
+  --si-footer-shell: 946px;
+  --si-gutter: 24px;
+  --si-section-gutter: 48px;
+  --si-divider-soft: #ebebeb;
+  --si-divider-inverse: rgba(255, 255, 255, 0.12);
+  --si-motion-fast: 160ms;
+  --si-motion-base: 280ms;
+  --si-motion-slow: 520ms;
+  --si-motion-hero: 720ms;
+  --si-ease-standard: cubic-bezier(0.22, 1, 0.36, 1);
+  --si-ease-soft: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --si-motion-distance-sm: 16px;
+  --si-motion-distance-lg: 32px;
+  --si-font-display: "Epilogue", sans-serif;
+  --si-font-heading: "Public Sans", sans-serif;
+  --si-font-body: "Inter", sans-serif;
+  --si-font-serif: "Newsreader", serif;
+  --si-font-editorial: "Lora", serif;
+  --si-font-accent: "Open Sans", sans-serif;
+}

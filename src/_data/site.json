@@ -1,0 +1,14 @@
+{
+  "name": "Social Intifada",
+  "url": "https://socialintifada.org",
+  "logoLight": "assets/img/logo-on-light.webp",
+  "logoDark": "assets/img/logo-on-dark.webp",
+  "footerMission": "Committed to unapologetic, front-foot digital activism grounded in the principles of the Quran and Sunnah. We aim to raise awareness, educate, and empower individuals to stand in solidarity with Palestine and Bilad Ash Shaam.",
+  "donateUrl": "https://pay.ikhokha.com/social-intifada/donation/donationonwebsite",
+  "supportUsLabel": "Support Us",
+  "stylesheet": "assets/css/site.css",
+  "script": "assets/js/site.js",
+  "googleFonts": "https://fonts.googleapis.com/css2?family=Epilogue:wght@800;900&family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Lora:wght@400;700&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&family=Open+Sans:wght@800&family=Public+Sans:ital,wght@0,400;0,700;0,800;0,900;1,900&display=swap",
+  "description": "Social Intifada is committed to unapologetic, front-foot digital activism grounded in the Quran and Sunnah — raising awareness, exposing oppression, and standing in solidarity with Palestine.",
+  "ogImage": "assets/img/apple-touch-icon.png"
+}

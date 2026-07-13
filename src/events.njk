@@ -1,0 +1,51 @@
+---
+title: "Events | Social Intifada"
+layout: layouts/base.njk
+permalink: "/events.html"
+navKey: "events"
+description: "Upcoming and completed Social Intifada events, including screenings of The Voice of Hind Rajab across South Africa."
+---
+{#
+  → WordPress: archive-event.php
+
+  `section` is stored here because a static site has no "now". In WordPress,
+  DERIVE it — two WP_Querys on the event date:
+    upcoming:  event_date >= now, ASC
+    completed: event_date <  now, DESC
+  HANDOFF §1.
+#}
+{% import "partials/event-card.njk" as cards %}
+{% set upcomingEvents = events | upcoming %}
+{% set completedEvents = events | completed %}
+
+<main class="page page--events-catalogue collection-catalogue">
+  <section class="collection-catalogue__section" id="upcoming-events">
+    <header class="collection-catalogue__heading" data-animate="fade-up">
+      <h2>Upcoming Events</h2>
+      <span aria-hidden="true"></span>
+    </header>
+
+    {%- if upcomingEvents.length %}
+    <div class="collection-catalogue__grid" data-animate-group="stagger" data-animate-delay="0.08" data-animate-threshold="0.01">
+      {%- for event in upcomingEvents %}{{ cards.card(event, root) }}{% endfor %}
+    </div>
+    {%- else %}
+    <p class="empty-state">No upcoming events at the moment.</p>
+    {%- endif %}
+  </section>
+
+  <section class="collection-catalogue__section" id="completed-events">
+    <header class="collection-catalogue__heading" data-animate="fade-up">
+      <h2>Completed Events</h2>
+      <span aria-hidden="true"></span>
+    </header>
+
+    {%- if completedEvents.length %}
+    <div class="collection-catalogue__grid" data-animate-group="stagger" data-animate-delay="0.08" data-animate-threshold="0.01">
+      {%- for event in completedEvents %}{{ cards.card(event, root) }}{% endfor %}
+    </div>
+    {%- else %}
+    <p class="empty-state">No completed events yet.</p>
+    {%- endif %}
+  </section>
+</main>

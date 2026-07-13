@@ -1,0 +1,19 @@
+{#
+  → WordPress: drop this. wp_get_attachment_image() does srcset itself.
+  Slots: 677px (hero), ~396px (card).
+
+  DO NOT add width/height attributes. The poster CSS sets `width: 100%` with no
+  height, so an HTML height="2000" wins as a presentational hint and the image
+  renders 2000px tall, ignoring aspect-ratio. aspect-ratio is already declared.
+  (The logos are the opposite — they need width/height.)
+#}
+{% macro poster(event, root, cls, sizes, lazy) %}
+<img
+  alt="{{ event.posterAlt }}"
+  {% if cls %}class="{{ cls }}"{% endif %}
+  {% if lazy %}loading="lazy"{% endif %}
+  decoding="async"
+  src="{{ root }}{{ event.poster }}-1355.webp"
+  srcset="{{ root }}{{ event.poster }}-800.webp 800w, {{ root }}{{ event.poster }}-1355.webp 1355w"
+  sizes="{{ sizes }}" />
+{% endmacro %}

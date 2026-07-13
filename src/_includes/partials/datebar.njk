@@ -1,0 +1,17 @@
+{#
+  → WordPress: template part in header.php.
+
+  site.js overwrites both values on load; the markup is the no-JS fallback,
+  rendered at build time. In WordPress render them with wp_date() — then they're
+  never stale and the JS is pure enhancement.
+
+  Note: Intl outputs "Dhū al-Qaʿdah" while event data says "Dhu al-Qidah". The
+  two calendars disagree. HANDOFF §7.
+#}
+<div class="site-header__datebar" aria-label="Current English and Islamic date">
+  <span class="site-header__datebar-label">English</span>
+  <span class="site-header__datebar-value" data-date-gregorian>{{ buildDate.gregorian }}</span>
+  <span class="site-header__datebar-separator" aria-hidden="true">/</span>
+  <span class="site-header__datebar-label">Islamic</span>
+  <span class="site-header__datebar-value" data-date-hijri>{{ buildDate.hijri }}</span>
+</div>

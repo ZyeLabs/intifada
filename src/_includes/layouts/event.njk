@@ -1,0 +1,133 @@
+---
+layout: layouts/base.njk
+---
+{#
+  → WordPress: single-event.php
+  CTA is a <span> when sold out, an <a> when bookable.
+  `Status` is derived from `section` — HANDOFF §1.
+#}
+{% import "partials/event-card.njk" as cards %}
+{% import "partials/poster.njk" as media %}
+<main class="page page--event-detail">
+  <article class="event-template" data-mobile-sticky-context>
+    <header class="event-template__header">
+      {%- if event.eyebrow %}
+      <p class="event-template__eyebrow" data-animate="fade-up">{{ event.eyebrow }}</p>
+      {%- endif %}
+      <h1 data-animate="word-stagger">{{ event.title }}</h1>
+      {%- if event.summary %}
+      <p class="event-template__summary" data-animate="fade-up" data-animate-delay="0.12">{{ event.summary }}</p>
+      {%- endif %}
+
+      <ul class="event-template__meta" data-animate="fade-up" data-animate-delay="0.2">
+        <li><span>Date</span><strong>{{ event.startsAt | eventDate }}</strong>{% if event.dateHijri %}<small>{{ event.dateHijri }}</small>{% endif %}</li>
+        <li><span>Time:</span><strong>{{ event.startsAt | eventTime }}</strong></li>
+        <li><span>Location</span><strong>{{ event.location or "TBC" }}</strong></li>
+      </ul>
+    </header>
+
+    <figure class="event-template__hero event-template__hero--poster" data-mobile-sticky-target data-animate="clip-reveal" data-parallax="soft">
+      {{ media.poster(event, root, "", "(max-width: 760px) 100vw, 677px", false) }}
+    </figure>
+
+    <div class="event-template__content-grid">
+      <aside class="event-template__aside" data-animate-group="stagger">
+        <h3>Key information</h3>
+        <dl>
+          <div>
+            <dt>Status</dt>
+            <dd>{{ event.section | eventStatus }}</dd>
+          </div>
+          <div>
+            <dt>Registration</dt>
+            <dd>{{ event.registration }}</dd>
+          </div>
+          <div>
+            <dt>Date</dt>
+            <dd>{{ event.startsAt | eventDate }}{% if event.dateHijri %}<span>{{ event.dateHijri }}</span>{% endif %}</dd>
+          </div>
+          <div>
+            <dt>Location</dt>
+            <dd>{{ event.location or "TBC" }}</dd>
+          </div>
+          <div>
+            <dt>Time:</dt>
+            <dd>{{ event.startsAt | eventTime }}</dd>
+          </div>
+        </dl>
+
+        {% if event.ctaUrl -%}
+        <a class="event-template__cta" target="_blank" rel="noopener" href="{{ event.ctaUrl }}">{{ event.ctaLabel }}</a>
+        {%- elif event.ctaLabel -%}
+        <span class="event-template__cta">{{ event.ctaLabel }}</span>
+        {%- endif %}
+        {%- if event.asideNote %}
+        <p class="event-template__aside-note">{{ event.asideNote }}</p>
+        {%- endif %}
+      </aside>
+
+      <section class="event-template__about">
+        <header>
+          <h2>About the event</h2>
+        </header>
+        <div class="event-template__body">
+{{ event.body | safe }}
+        </div>
+      </section>
+    </div>
+  </article>
+
+  {#
+    Puts the screening into Google's event results.
+    → WordPress: emit the same shape, or let an SEO plugin do it from the CPT
+    fields. `eventStatus` and `eventAttendanceMode` are enums, not free text.
+  #}
+  {%- if event.startsAt %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScreeningEvent",
+    "name": {{ event.title | dump | safe }},
+    "startDate": "{{ event.startsAt }}",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    {%- if event.location %}
+    "location": {
+      "@type": "Place",
+      "name": {{ event.location | dump | safe }},
+      "address": {{ event.location | dump | safe }}
+    },
+    {%- endif %}
+    "image": ["{{ site.url }}/{{ event.poster }}-1355.webp"],
+    {%- if event.summary %}
+    "description": {{ event.summary | dump | safe }},
+    {%- endif %}
+    "organizer": {
+      "@type": "Organization",
+      "name": {{ site.name | dump | safe }},
+      "url": "{{ site.url }}"
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": "{% if event.ctaUrl %}{{ event.ctaUrl }}{% else %}{{ site.url }}/{{ event.slug | eventUrl }}{% endif %}",
+      "availability": "{% if event.registration == 'Sold out' %}https://schema.org/SoldOut{% else %}https://schema.org/InStock{% endif %}"
+    }
+  }
+  </script>
+  {%- endif %}
+
+  {%- if event.relatedSlugs.length %}
+  <section class="events-catalogue__section">
+    <header class="events-catalogue__heading" data-animate="fade-up">
+      <h2>More upcoming events</h2>
+      <span aria-hidden="true"></span>
+    </header>
+    <div class="events-catalogue__grid" data-animate-group="stagger" data-animate-delay="0.08">
+      {%- for slug in event.relatedSlugs %}
+        {%- set related = events | bySlug(slug) %}
+        {%- if related %}{{ cards.card(related, root, "Upcoming event") }}{% endif %}
+      {%- endfor %}
+    </div>
+  </section>
+  {%- endif %}
+</main>

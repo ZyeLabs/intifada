@@ -1,0 +1,7 @@
+[
+  { "label": "Home", "url": "index.html" },
+  { "label": "About Us", "url": "about-us.html" },
+  { "label": "News", "url": "https://x.com/socialintifada", "external": true },
+  { "label": "Events", "url": "events.html" },
+  { "label": "Islamic Relief", "url": "https://www.islamic-relief.org.za", "external": true }
+]

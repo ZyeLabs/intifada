@@ -1,0 +1,48 @@
+{#
+  → WordPress: split into header.php (to </header>) and footer.php (from
+    <footer>). The <head> goes through wp_head().
+
+  The SEO block below is what Yoast/RankMath emits — use the plugin, don't port
+  it by hand.
+#}<!DOCTYPE html>
+{%- set pageDescription = description or site.description %}
+{%- set pageImage = ogImage or site.ogImage %}
+{%- set canonical = site.url + "/" + (page.url | replace("/", "", 1)) %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{{ title }}</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="{{ pageDescription }}">
+    <link rel="canonical" href="{{ canonical }}">
+
+    <meta property="og:type" content="{{ ogType or 'website' }}">
+    <meta property="og:site_name" content="{{ site.name }}">
+    <meta property="og:title" content="{{ ogTitle or title }}">
+    <meta property="og:description" content="{{ pageDescription }}">
+    <meta property="og:url" content="{{ canonical }}">
+    <meta property="og:image" content="{{ site.url }}/{{ pageImage }}">
+    <meta property="og:locale" content="en_ZA">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@socialintifada">
+    <meta name="twitter:title" content="{{ ogTitle or title }}">
+    <meta name="twitter:description" content="{{ pageDescription }}">
+    <meta name="twitter:image" content="{{ site.url }}/{{ pageImage }}">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ root }}assets/img/favicon-32.png" />
+    <link rel="apple-touch-icon" href="{{ root }}assets/img/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="{{ site.googleFonts }}" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="{{ root }}{{ site.stylesheet }}" />
+    <script src="{{ root }}{{ site.script }}" defer></script>
+  </head>
+  <body class="site-body">
+    {% include "partials/site-header.njk" %}
+
+{{ content | safe }}
+
+    {% include "partials/site-footer.njk" %}
+  </body>
+</html>

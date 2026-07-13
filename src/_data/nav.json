@@ -1,0 +1,6 @@
+[
+  { "label": "Home", "url": "index.html", "key": "home" },
+  { "label": "About Us", "url": "about-us.html", "key": "about" },
+  { "label": "News", "url": "https://x.com/socialintifada", "key": "news", "external": true },
+  { "label": "Events", "url": "events.html", "key": "events" }
+]

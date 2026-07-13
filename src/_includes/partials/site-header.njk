@@ -1,0 +1,78 @@
+{#
+  → WordPress: header.php
+
+  The drawer repeats the nav because it is a separate DOM tree, not restyled CSS.
+  Register one menu location ("primary") and call wp_nav_menu twice.
+#}
+<header class="site-header" data-mobile-nav>
+  <div class="site-header__main">
+    <a href="{{ root }}index.html" class="site-header__brand" aria-label="{{ site.name }}">
+      <img alt="" width="800" height="380" class="site-header__brand-image" src="{{ root }}{{ site.logoLight }}" />
+    </a>
+
+    <button
+      type="button"
+      class="site-header__menu-toggle"
+      aria-expanded="false"
+      aria-controls="site-mobile-nav"
+      data-mobile-nav-toggle>
+      <span class="site-header__menu-toggle-label">Menu</span>
+      <span class="site-header__menu-toggle-icon" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+    </button>
+
+    <nav class="site-header__nav" aria-label="Main">
+      {%- for item in nav %}
+        {%- set active = item.key == navKey %}
+        <a class="site-header__nav-link{% if active %} site-header__nav-link--active{% endif %}"
+           {%- if active %} aria-current="page"{% endif %}
+           href="{% if item.external %}{{ item.url }}{% else %}{{ root }}{{ item.url }}{% endif %}"
+           {%- if item.external %} target="_blank" rel="noopener"{% endif %}>{{ item.label }}</a>
+      {%- endfor %}
+    </nav>
+
+    <div class="site-header__actions">
+      <a class="button button--donate site-header__donate" href="{{ root }}donate.html">{{ site.supportUsLabel }}</a>
+    </div>
+  </div>
+
+  {% include "partials/datebar.njk" %}
+
+  <div class="site-header__mobile-backdrop" hidden data-mobile-nav-backdrop></div>
+
+  <aside
+    class="site-header__drawer"
+    id="site-mobile-nav"
+    hidden
+    tabindex="-1"
+    aria-label="Mobile navigation"
+    data-mobile-nav-drawer>
+    <div class="site-header__drawer-header">
+      <a href="{{ root }}index.html" class="site-header__drawer-brand" aria-label="{{ site.name }}">
+        <img alt="" width="800" height="380" class="site-header__drawer-brand-image" src="{{ root }}{{ site.logoLight }}" />
+      </a>
+
+      <button type="button" class="site-header__drawer-close" data-mobile-nav-close>
+        <span class="site-header__drawer-close-label">Close</span>
+      </button>
+    </div>
+
+    <nav class="site-header__drawer-nav" aria-label="Mobile main">
+      {%- for item in nav %}
+        {%- set active = item.key == navKey %}
+        <a class="site-header__drawer-link{% if active %} site-header__drawer-link--active{% endif %}"
+           data-mobile-nav-link="true"
+           {%- if active %} aria-current="page"{% endif %}
+           href="{% if item.external %}{{ item.url }}{% else %}{{ root }}{{ item.url }}{% endif %}"
+           {%- if item.external %} target="_blank" rel="noopener"{% endif %}>{{ item.label }}</a>
+      {%- endfor %}
+    </nav>
+
+    <div class="site-header__drawer-actions">
+      <a class="button button--donate site-header__drawer-donate" href="{{ root }}donate.html">{{ site.supportUsLabel }}</a>
+    </div>
+  </aside>
+</header>

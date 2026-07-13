@@ -1,0 +1,26 @@
+/*
+ * Social Intifada — stylesheet entry point.
+ *
+ * Was one 6,420-line compiled file (an unminified DEBUG build, shipped to
+ * production, 28% of it SCSS provenance comments). Split back into the partials
+ * it named in those comments.
+ *
+ * The build (postcss-import + purgecss + cssnano) flattens this into one file.
+ * Purge is why pages/news.css and the unused card variants cost nothing at
+ * runtime while remaining available to the WordPress build — see README.
+ */
+@import "base/tokens.css";
+@import "base/base.css";
+@import "components/buttons.css";
+@import "components/cards.css";
+@import "layouts/header.css";
+@import "layouts/footer.css";
+@import "pages/home.css";
+@import "pages/news.css";
+@import "pages/events.css";
+@import "pages/event_template.css";
+@import "pages/content.css";
+@import "pages/donate.css";
+@import "pages/about.css";
+@import "base/motion.css";
+@import "components/poster-media.css";
